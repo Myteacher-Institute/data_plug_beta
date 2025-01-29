@@ -149,6 +149,9 @@ class HomeController extends Controller
         return view('front.settings');
     }
 
+
+    
+
     public function update_details(Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
