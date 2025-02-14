@@ -14,6 +14,7 @@
      <link rel="stylesheet" href="{{asset('assset/dashboard.css')}}">
      <link rel="stylesheet" href="{{asset('assset/help.css')}}">
      <link rel="stylesheet" href="{{ asset('css/transaction.css') }}">
+     <link rel="stylesheet" href="{{ asset('css/tin.css') }}">
 
      <link rel="shortcut icon" @if ($settings) href={{  asset('uploads/'.$settings->favicon) }}@endif type="image/x-icon">
 

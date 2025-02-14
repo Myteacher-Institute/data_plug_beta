@@ -88,7 +88,7 @@
                   <h3 class="h3">Tin verification</h3> 
                   <p class="sup-details">Verify tax identification Number (TIN Number)</p>
                   <div class="use-btn">
-                      <a href="#" class="amount-btn">Use Services</a>
+                      <a href="/tin" class="amount-btn">Use Services</a>
                   </div>
               </div>
   </div>

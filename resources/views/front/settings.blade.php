@@ -1,12 +1,12 @@
 @extends('layouts.user')
 
 @section('content')
-<div class="main">
+<div class="main"
     <div class="topbar">
       <div class="toggle">
           <i class="fa fa-navicon"></i>
       </div>
-      <{{-- div class="search">
+      {{-- div class="search">
           <label class="label">
               <input type="text" placeholder="search here" id="search">
               <i class="fa fa-search"></i>
@@ -106,5 +106,5 @@
                 </div>
             </form>
           </div>
-</div>
+</div
 @endsection
