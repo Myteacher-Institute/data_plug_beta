@@ -13,6 +13,7 @@
               <i class="fa fa-search"></i>
           </label>
       </> --}}
+
           <div class="user-img">
 
                     <div onclick="return confirm('Are you sure to logout?')">
@@ -38,7 +39,7 @@
           
         <div class="card">
               @if ($item == "data") 
-              <form id="makePaymentForm" method="POST" enctype="multipart/form-data">
+              <form action="{{ url('buy-data') }}" method="POST">
                     @csrf
 
                     <div class="form">
@@ -79,10 +80,10 @@
                         <div class="input-container ic1" style="margin-bottom: 50px">
                             <select name="operator" id="">
                                 <option value="">--Choose an Operator</option>
-                                <option value="mtn">MTN</option>
-                                <option value="airtel">Airtel</option>
-                                <option value="glo">Glo</option>
-                                <option value="etisalat">9mobile</option>
+                                <option value="1">MTN</option>
+                                <option value="4">Airtel</option>
+                                <option value="2">Glo</option>
+                                <option value="3">9mobile</option>
                             </select>
     
                         </div>

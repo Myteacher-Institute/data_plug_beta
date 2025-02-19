@@ -43,12 +43,11 @@
       <div>
         <table>
           <thead>
-            <th>Request ID</th>
-            <th>User ID</th>
             <th>Product Name</th>
+            <th>Customer Ref</th>
             <th>Phone</th>
             <th>Amount</th>
-            <th>Type</th>
+            <th>Network</th>
             <th>Status</th>
             <th>Created At</th>
           </thead>
@@ -56,12 +55,11 @@
           <tbody>
             @foreach ($transactions as $transaction)
               <tr>
-                <td>{{ $transaction->request_id }}</td>
-                <td>{{ $transaction->user_id }}</td>
                 <td>{{ $transaction->product_name }}</td>
+                <td>{{ $transaction->customer_ref }}</td>
                 <td>{{ $transaction->phone }}</td>
                 <td>{{ $transaction->amount }}</td>
-                <td>{{ $transaction->type }}</td>
+                <td>{{ $transaction->network }}</td>
                 <td>{{ $transaction->status == 1 ? "Deliverd" : "Not Delivered" }} </td>
                 <td>{{ $transaction->created_at }}</td>
               </tr>

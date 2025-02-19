@@ -61,7 +61,7 @@
         </li>
 
         <li onclick="return confirm('Are you sure to logout?')">
-            <a href="{{ route('logout') }}"
+            <a href="{{ route('logout') }}" 
             onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
                           <span class="icon">

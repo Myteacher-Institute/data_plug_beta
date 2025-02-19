@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\controllers\Front\PagesController;
+use App\Http\Controllers\Front\PagesController;
 use App\Http\Controllers\VTUController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +24,7 @@ Route::get('/features', [PagesController::class, 'features']);
 
 Auth::routes();
 
-// User Routess 
+// User Routes
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']);
 Route::get('/transactions', [App\Http\Controllers\HomeController::class, 'transactions']);
@@ -34,12 +34,14 @@ Route::get('/settings', [App\Http\Controllers\HomeController::class, 'settings']
 Route::put('/update_details', [App\Http\Controllers\HomeController::class, 'update_details']);
 Route::put('/update_password', [App\Http\Controllers\HomeController::class, 'update_password']);
 
+// User Purchase Airtime
+Route::post('/buy-airtime', [App\Http\Controllers\VTUController::class, 'buy_airtime']);
+Route::post('/buy-data', [App\Http\Controllers\VTUController::class, 'buy_data']);
+
 // Payment Routes
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'payment']);
 Route::get('/make_payment', [App\Http\Controllers\PaymentController::class, 'make_payment']);
 
-// VTU Routes
-Route::post('/buy-airtime', [VTUController::class, 'buy_airtime']);
 
 Route::get('/buy_item/{item}', [App\Http\Controllers\Front\BuyItemController::class, 'buy_item']);
 

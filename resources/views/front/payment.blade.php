@@ -53,8 +53,13 @@
                     <input id="email" name="email" value="{{ Auth::user()->email }}" class="input" type="hidden" placeholder=" " />
                     <input id="phone" name="phone" value="{{ Auth::user()->phone }}" class="input" type="hidden" placeholder=" " />
                     <input id="tx_ref" name="tx_ref" value="{{ time() }}" class="input" type="hidden" placeholder=" " />
-                    <input id="title" name="title" value="{{ $settings->website_title }}" class="input" type="hidden" placeholder=" " />
-                    <input id="logo" name="logo" value="{{ $settings->logo }}" class="input" type="hidden" placeholder=" " />
+                     @if ($settings)
+                     <input id="title" name="title" value="{{ $settings->website_title }}" class="input" type="hidden" placeholder=" " />
+                     <input id="logo" name="logo" value="{{ $settings->logo }}" class="input" type="hidden" placeholder=" " />
+                     @else
+                     <input id="title" name="title" value="" class="input" type="hidden" placeholder=" " />
+                     <input id="logo" name="logo" value="" class="input" type="hidden" placeholder=" " />
+                     @endif
 
                     </div>
 
@@ -87,7 +92,7 @@
 
     function makePayment(amount,user_id,tx_ref,email,phone,name,title,logo) {
         FlutterwaveCheckout({
-            public_key: "FLWSECK_TEST-41a99426c1734b81a4d2c4c366a3b372-X",
+            public_key: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
             tx_ref,
             amount,
             currency: "NGN",

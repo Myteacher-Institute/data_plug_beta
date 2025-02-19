@@ -24,7 +24,7 @@
         <script>
             alert('{{ session('message') }}')
         </script>
-    @endif
+        @endif
 
         <div class="values">
             <form action="{{ url('admin/settings') }}" method="POST" enctype="multipart/form-data">
@@ -51,14 +51,25 @@
                         <input id="favicon" name="favicon"  class="input" type="file" placeholder=" " />
                         <label for="favicon" >Favicon</label>
                     </div><br><br><br><br>
+                    @if ($settings)
                     <div class="input-container ic2" style="margin-bottom: 50px">
-                    <input id="keywords" name="keywords" value="{{ $settings->keywords}}" class="input" type="text" placeholder=" " />
-                    <label for="keywords" >Keywords</label>
-                    </div>
-                    <div class="input-container ic2" style="margin-bottom: 30px">
-                    <textarea id="description" name="description" class="input" cols="40" rows="15">{{ $settings->description }}</textarea>
-                    <label for="description" >Description</>
-                    </div>
+                        <input id="keywords" name="keywords" value="{{ $settings->keywords}}" class="input" type="text" placeholder=" " />
+                        <label for="keywords" >Keywords</label>
+                        </div>
+                        <div class="input-container ic2" style="margin-bottom: 30px">
+                        <textarea id="description" name="description" class="input" cols="40" rows="15">{{ $settings->description }}</textarea>
+                        <label for="description" >Description</>
+                        </div>
+                    @else
+                    <div class="input-container ic2" style="margin-bottom: 50px">
+                        <input id="keywords" name="keywords" value="" class="input" type="text" placeholder=" " />
+                        <label for="keywords" >Keywords</label>
+                        </div>
+                        <div class="input-container ic2" style="margin-bottom: 30px">
+                        <textarea id="description" name="description" class="input" cols="40" rows="15"></textarea>
+                        <label for="description" >Description</>
+                        </div>
+                    @endif
                     <button type="submit" class="submit">Save</button>
                 </div>
             </form>

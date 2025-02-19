@@ -9,12 +9,13 @@
 <meta name="keywords" content="@if ($settings) {{$settings->keywords }}@endif">
 <meta name="description" content="@if ($settings) {{$settings->description }}@endif">
 
-<link rel="stylesheet" href={{ asset('css/style1.css') }}>
-<link rel="stylesheet" href={{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}>
-<link rel="stylesheet" href={{ asset('css/style3.css') }}>
-<link rel="stylesheet" href={{ asset('css/style4.css') }}>
+<link rel="stylesheet" href="{{ asset('css/style1.css') }}">
+<link rel="stylesheet" href="{{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style3.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style4.css') }}">
 <link rel="stylesheet" href="{{ asset('css/regis.css') }}">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
 
 <link rel="shortcut icon" @if ($settings) href={{  asset('uploads/'.$settings->favicon) }}@endif type="image/x-icon">

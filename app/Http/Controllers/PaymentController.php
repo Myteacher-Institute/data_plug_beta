@@ -32,13 +32,13 @@ class PaymentController extends Controller
             CURLOPT_URL => 'https://api.flutterwave.com/v3/transactions/'.$tx_id.'/verify',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_MAXREDIRS => 10, 
             CURLOPT_TIMEOUT => 0,
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_HTTPHEADER => array(
-                'Authorization: Bearer FLWSECK_TEST-41a99426c1734b81a4d2c4c366a3b372-X',
+                'Authorization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
                 'Content-Type: application/json'
             ),
             ));
@@ -54,7 +54,7 @@ class PaymentController extends Controller
                 $tx_ref = $res->data->tx_ref;
                 $name = $res->data->customer->name;
                 $email = $res->data->customer->email;
-                $phone = $res->data->customer->phone;
+                $phone = $res->data->customer->phone_number;
                 $user_id = $res->data->meta->user_id;
 
                 $payments = new Payments;
