@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\controllers\Front\PagesController;
+use App\Http\Controllers\Front\PagesController;
 use App\Http\Controllers\VTUController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
