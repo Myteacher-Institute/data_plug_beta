@@ -1037,7 +1037,7 @@ padding: 0 2px;
   
   } */
 
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
   @media (max-width: 360px){
     #help-brodcast > summary{
       font-size: 20px;
@@ -1055,11 +1055,10 @@ padding: 0 2px;
     border-radius: 5px;
     box-sizing: border-box;
   }
-=======
+
   /* @media (max-width: 360px){
  
   } */
->>>>>>> 2bcd24b050dedd4adcfc9d5b8de0feab85702fe4
 
     /*Table Styles*/
   table {

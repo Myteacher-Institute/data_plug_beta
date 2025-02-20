@@ -37,7 +37,7 @@
 
           <div>
             <div class="home">
-                <i class="fas fa-money-bill-1" aria-hidden="true"></i>
+                <i class="fas fa-id-card" aria-hidden="true"></i>
                 <p>NIN {{ $value }}</p>
             </div>
 

@@ -6,7 +6,6 @@ sendBtnMd.addEventListener('click', () => {
     sendBtnMd.textContent = modification;
 });
 
-
-sendBtnMd.addEventListener('click', () => {
-    sendBtnMd.textContent = retrieving;
+sendBtnRt.addEventListener('click', () => {
+    sendBtnRt.textContent = retrieving;
 });
