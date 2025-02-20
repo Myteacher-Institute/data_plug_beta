@@ -24,4 +24,8 @@ class PagesController extends Controller
     {
         return view('front.features');
     }
+    public function test()
+    {
+        return view('front.test');
+    }
 }
