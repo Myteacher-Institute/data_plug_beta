@@ -965,8 +965,16 @@ body{
       color: #202022;
     } 
   }
+  .nin {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
 
-  /*Table Styles*/
+    /*Table Styles*/
   table {
     width: 100%;
     border-collapse: collapse;

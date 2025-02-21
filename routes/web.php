@@ -38,6 +38,11 @@ Route::put('/update_password', [App\Http\Controllers\HomeController::class, 'upd
 Route::post('/buy-airtime', [App\Http\Controllers\VTUController::class, 'buy_airtime']);
 Route::post('/buy-data', [App\Http\Controllers\VTUController::class, 'buy_data']);
 
+// User NIN Services
+Route::get('/nin-services', [App\Http\Controllers\NINController::class, 'nin_services']);
+Route::get('/display-value', [App\Http\Controllers\NINController::class, 'display_value'])->name('display.value');
+
+
 // Payment Routes
 Route::get('/payment', [App\Http\Controllers\PaymentController::class, 'payment']);
 Route::get('/make_payment', [App\Http\Controllers\PaymentController::class, 'make_payment']);

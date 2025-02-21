@@ -65,6 +65,18 @@
                     alert('{{ session('message') }}');
                 </script>
               @endif
+              <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">NIN Services</h3> 
+                <p class="sup-details">Modify or Retrieve your NIN</p>
+                <div class="use-btn">
+                    <select class="nin" name="">
+                        <option value="">--select--</option>
+                        <option value="retrieval">NIN Retrieval</option>
+                        <option value="modification">NIN Modification</option>
+                    </select>
+                </div>
+            </div>
             <div class="sup-item">
                 <img src="assset/img/download (1).png" alt="">
                 <h3 class="h3">Buy Data</h3> 
@@ -83,4 +95,35 @@
             </div>
         </div>
   </div>
+
+
+  <script>
+    //let ninSelect = document.querySelector('.nin');
+    //let ninOptions = ninSelect.querySelectorAll('option');
+    //var ninSelect = $(this).val();
+
+    $(document).ready(function() {
+        $(".nin").change(function() {
+            var ninSelect = $(this).val();
+
+            $.ajax({
+                url: "nin-services",
+                type: "GET",
+                data: {
+                    value: ninSelect,
+                    _token: $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    if (response.redirect_url) {
+                        window.location.href = response.redirect_url;
+                    }
+                },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                    }
+            });
+        });
+    });
+
+  </script>
 @endsection

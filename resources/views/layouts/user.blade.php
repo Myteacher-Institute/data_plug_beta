@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @php
         $settings = App\Models\Settings::where('id',1)->first();
     @endphp
@@ -19,6 +20,8 @@
      <link rel="shortcut icon" @if ($settings) href={{  asset('uploads/'.$settings->favicon) }}@endif type="image/x-icon">
 
      <!-- Scripts -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
      @vite(['resources/js/app.js'])
 </head>
 <body>
