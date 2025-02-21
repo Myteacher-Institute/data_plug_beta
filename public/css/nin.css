@@ -62,6 +62,9 @@
     #nin-rt-header > h1,.nin-md-header > h1{
         font-size: 50px;
     }
+    #nin-rt-header > p,.nin-md-header > p{
+        font-size: 50px;
+    }
     .nin-rt > label{
         font-size: 34px;
     }
