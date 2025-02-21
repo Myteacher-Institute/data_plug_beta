@@ -985,6 +985,14 @@ outline: 0;
     width: 660px;
     font-size: 40px;
   }
+  #profile-form .form .ic1 > label{
+    font-size: 30px;
+  }
+  #profile-form .form > h2{
+    font-size: 40px;
+    font-weight: 900;
+    color: green;
+  }
 }
 
 .submit:active {

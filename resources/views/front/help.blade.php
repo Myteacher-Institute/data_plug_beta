@@ -15,14 +15,14 @@
           <div class="user-img">
 
                     <div onclick="return confirm('Are you sure to logout?')">
-                        <a href="{{ route('logout') }}"
+                        {{-- <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                                          <span class="icon">
                                             <i class="fa fa-arrow-right-from-bracket v1"></i>
                                             </span>
                                             Logout
-                        </a>
+                        </a> --}}
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
@@ -48,10 +48,10 @@
                             {{ $help->category }}
                         </h4>
                         <div class="help-dropdown">
-                            <p>{{ $help->content }}</p>
-                            @if ($help->video && $help->img)
+                            <p>{{$help->content }}</p>
+                            @if ($help->img)
                             <video @if($help) src="{{ asset($help->video) }}" @endif controls loop autoplay></video>
-                            <img @if($help) src="{{ asset($help->img) }}" @endif alt="">
+                            <img @if($help) src="{{ asset($help->img) }}" @endif alt="help image">
                             @else
                                 <p style="color: red;">No file found</p>
                             @endif

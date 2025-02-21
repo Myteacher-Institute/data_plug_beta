@@ -14,6 +14,8 @@ class Help extends Model
     protected $fillable = [
         'category',
         'content',
+        'img',
+        'video'
     ];
 
 }

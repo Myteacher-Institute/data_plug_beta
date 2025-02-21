@@ -18,9 +18,9 @@
         <li>
             <a href={{ url('services') }}>
                 <span class="icon">
-                <i class="fa fa-border-all v1"></i>
+                <i class="fas fa-arrow-trend-up v1"></i>
                 </span>
-                <span class="title">Services</span>
+                <span class="title">Request</span>
             </a>
         </li>
 
