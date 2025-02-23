@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Help;
+use App\Models\NINServices;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Settings;
@@ -33,7 +34,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('front.home');
+        $nin_services = NINServices::all();
+
+        return view('front.home', ['nin_services' => $nin_services]);
     }
 
     public function payment()

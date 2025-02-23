@@ -36,18 +36,23 @@
       </div>
 
           <div>
+            @if (session('message'))
+                <script>
+                    alert('{{ session('message') }}');
+                </script>
+              @endif
             <div class="home">
                 <i class="fas fa-money-bill-1" aria-hidden="true"></i>
-                <p>NIN {{ $value }}</p>
+                <p> {{ $value }}</p>
             </div>
 
-            @if ($value == "retrieval")
+            @if ($value == "nin-retrieval")
             @include('includes/nin-retrieving')
 
-            @elseif ($value == "modification")
+            @elseif ($value == "nin-modification")
             @include('includes/nin-modification')
             @else
-                <h3 style="color: red">Invalida Request</h3>
+                <h3 style="color: red">Invalid Request</h3>
             @endif
             
           </div>

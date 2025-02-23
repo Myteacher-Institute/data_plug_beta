@@ -41,7 +41,8 @@ Route::post('/buy-data', [App\Http\Controllers\VTUController::class, 'buy_data']
 
 // User NIN Services
 Route::get('/nin-services', [App\Http\Controllers\NINController::class, 'nin_services']);
-Route::get('/display-value', [App\Http\Controllers\NINController::class, 'display_value'])->name('display.value');
+Route::get('/display-value', [App\Http\Controllers\NINController::class, 'display_value']);
+Route::post('/nin-retrieval', [App\Http\Controllers\NINController::class, 'nin_retrieval']);
 
 
 // Payment Routes
@@ -58,12 +59,18 @@ Route::get('/mobile_data', [App\Http\Controllers\HomeController::class, 'mobile_
 Route::get('/sme', [App\Http\Controllers\HomeController::class, 'sme']);
 Route::get('/electricity', [App\Http\Controllers\HomeController::class, 'electricity']);
 Route::get('/bills', [App\Http\Controllers\HomeController::class, 'bills']);
- 
+  
 
 // Admin Routes
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::get('/index', [AdminController::class, 'index']);
     Route::get('/users', [AdminController::class, 'users']);
+    Route::get('/services', [AdminController::class, 'services']);
+    Route::get('/add-service', [AdminController::class, 'add_service']);
+    Route::post('/store-service', [AdminController::class, 'store_service']);
+    Route::get('/edit-service/{id}', [AdminController::class, 'edit_service']);
+    Route::put('/edit-service/{id}', [AdminController::class, 'update_service']);
+    Route::delete('/delete-service/{id}', [AdminController::class, 'delete_service']);
     Route::get('/profile', [AdminController::class, 'profile']);
     Route::put('/profile', [AdminController::class, 'update_profile']);
     Route::put('/password', [AdminController::class, 'update_password']);

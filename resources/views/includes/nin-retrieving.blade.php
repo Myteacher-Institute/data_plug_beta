@@ -8,8 +8,10 @@
 {{-- i suggest that this place should be for payment form before the user proceed with nin retriving form --}}
 
 <div class="nin-rt-form">
-    <form action="" method="" enctype="">
+    <form action="{{ url('nin-retrieval') }}" method="POST">
         @csrf
+
+        <input type="hidden" value={{ $value }} name="service_type">
 
         <div class="nin-rt-form-group">
             <input type="text" id="nin" name="firstname" placeholder="Enter your NIN firstname">
@@ -44,11 +46,14 @@
         </div>
 
         <div class="nin-rt-form-group">
-            <input type="date" id="nin" name="date of birth" placeholder="Enter your date of birth"> <i>(DOB)</i>
+            <input type="date" id="nin" name="dob" placeholder="Enter your date of birth"> <i>(DOB)</i>
         </div>
 
+        @php
+            $nin_service = App\Models\NINServices::where('slug', $value)->first();
+        @endphp
         <div class="nin-rt-form-group-btn">
-            <button type="submit" id="send-nin-rt">Submit Details</button> <i>(Fee ₦2000)</i>
+            <button type="submit" id="send-nin-rt">Submit Details</button> <i>(Fee ₦{{ $nin_service->amount }})</i>
         </div>
 
     </form>

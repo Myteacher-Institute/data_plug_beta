@@ -72,8 +72,9 @@
                 <div class="use-btn">
                     <select class="nin" name="">
                         <option value="">--select--</option>
-                        <option value="retrieval">NIN Retrieval</option>
-                        <option value="modification">NIN Modification</option>
+                        @foreach ($nin_services as $item)
+                            <option value="{{ $item->slug }}">{{ $item->name }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
