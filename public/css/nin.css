@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-shadow: border-box;
+}
+
+.nin-rt,.nin-m{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+}
+
+#nin-rt-header,.nin-md-header{
+    padding: 30px;
+    background-color: rgba(22, 94, 22, 0.678);
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+}
+.nin-rt > label{
+    font-weight: bold;
+    color: #333;
+}
+.nin-rt-form,.nin-md-form{
+    margin: 30px 0;
+}
+.nin-rt-form > form,.nin-md-form > form{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.nin-rt-form-group > input{
+    padding: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.nin-rt-form-group-btn{
+    padding: 10px 20px;
+}
+.nin-rt-form-group-btn > button{
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 20px;
+    background-color: #18802e;
+    padding: 10px 30px;
+}
+.nin-rt-form-group-btn > button:hover{
+    background-color: #136225;
+}

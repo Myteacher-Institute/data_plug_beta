@@ -1,6 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 #section-form{
     margin-top: 70px;
 }
 #email:invalid{
     border: 1px solid rgb(214, 16, 16);
+}
+
+@media (orientation: portrait) {
+    .container{
+        background-color: red;
+        width: 700px;
+        height: 400px;
+    }
+    .card{
+        /*  */
+    }
+    .card-body{
+        background: rgba(0, 0, 255, 0.479);
+        width: 100%;
+    }
+
+    /* #section-form{
+        margin-top: 0;
+    }
+    #email{
+        margin-bottom: 20px;
+    }
+    #submit-btn{
+        margin-top: 20px;
+    }
+    #error-message{
+        margin-top: 20px;
+    }
+    #success-message{
+        margin-top: 20px;
+    }
+    #section-form label{
+        margin-bottom: 10px;
+    }
+    #section-form input, #section-form select{
+        width: 100%;
+        padding: 10px;
+    }
+    #section-form button{
+        width: 100%;
+        padding: 10px 20px;
+    }
+    #section-form input[type="email"]{
+        margin-bottom: 30px;
+    }
+    #section-form select{
+        margin-bottom: 0;
+    }
+    #section-form textarea{
+        margin-bottom: 30px;
+    }
+    #section-form fieldset{
+        margin-bottom: 30px;
+    }
+    #section-form fieldset legend{
+        font-weight: bold;
+    }
+    #section-form fieldset label{
+        margin-bottom: 10px;
+    }
+    #section-form fieldset input[type="checkbox"], #section-form fieldset input[type="radio"]{
+        margin-right: 10px;
+    }
+    #section-form fieldset button{
+        margin-top: 10px;
+    }
+    #section-form fieldset select{
+        margin-bottom: 20px;
+    }
+    #section-form fieldset textarea{
+        margin-bottom: 0;
+    }
+    #section-form fieldset fieldset{
+        margin-bottom: 20px;
+    }
+    #section-form fieldset fieldset label{
+        margin-bottom: 10px;
+    }
+    #section-form fieldset fieldset input[type="checkbox"], #section-form fieldset fieldset input[type="radio"]{
+        margin-right: 10px;
+    }
+    #section-form fieldset fieldset button{
+        margin-top: 10px;
+    } */
 }
