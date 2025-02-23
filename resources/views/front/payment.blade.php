@@ -6,7 +6,7 @@
       <div class="toggle">
           <i class="fa fa-navicon"></i>
       </div>
-      <{{-- div class="search">
+      {{-- div class="search">
           <label class="label">
               <input type="text" placeholder="search here" id="search">
               <i class="fa fa-search"></i>
@@ -14,7 +14,7 @@
       </> --}}
           <div class="user-img">
 
-                    <div onclick="return confirm('Are you sure to logout?')">
+                    {{-- <div onclick="return confirm('Are you sure to logout?')">
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
@@ -27,7 +27,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-                    </div>
+                    </div> --}}
 
               {{-- <img src="assset/img/SmartCity_connect_900.jpg" id="photo">
               <input type="file" id="file" accept="image/png, image/jpeg, image/gif" required/>
@@ -45,7 +45,7 @@
 
                 <div class="form">
                     <div class="input-container ic1" style="margin-bottom: 50px">
-                    <input id="amount" name="amount" class="input" type="text" style="color: black;"/><br>
+                    <input id="amount" name="amount" class="input" type="text" style="color: black;" placeholder="Enter your amount"/><br>
                     <label for="amount" >Enter Amount <i class="fas fa-coins"></i></label>
 
                     <input id="user_id" name="user_id" value="{{ Auth::user()->user_id }}" class="input" type="hidden" placeholder=" " />
@@ -66,6 +66,10 @@
                     <button type="submit" class="submit">Continue</button>
                 </div>
             </form>
+          </div>
+
+          <div class="payment">
+            <h1>You can 💵 update your Balance by putting your Amount then click the button</h1>
           </div>
 </div>
 

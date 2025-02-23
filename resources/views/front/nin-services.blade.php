@@ -14,7 +14,7 @@
       </> --}}
           <div class="user-img">
 
-                    <div onclick="return confirm('Are you sure to logout?')">
+                    {{-- <div onclick="return confirm('Are you sure to logout?')">
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
@@ -27,7 +27,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-                    </div>
+                    </div> --}}
 
               {{-- <img src="assset/img/SmartCity_connect_900.jpg" id="photo">
               <input type="file" id="file" accept="image/png, image/jpeg, image/gif" required/>
@@ -42,8 +42,13 @@
                 </script>
               @endif
             <div class="home">
+<<<<<<< HEAD
                 <i class="fas fa-money-bill-1" aria-hidden="true"></i>
                 <p> {{ $value }}</p>
+=======
+                <i class="fas fa-id-card" aria-hidden="true"></i>
+                <p>NIN {{ $value }}</p>
+>>>>>>> f03d821d6269673648d09b6333271aead81b1ccb
             </div>
 
             @if ($value == "nin-retrieval")

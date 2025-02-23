@@ -695,6 +695,7 @@ body{
   .card{
     width: 83vw;
     display: grid;
+    margin-top: 200px;
     grid-template-columns: repeat(1, 1fr);
     /* grid-template-rows: repeat(3, 1fr); */
     padding: 10px 0;
@@ -704,6 +705,26 @@ body{
     width: 85%;
     background: var(--color-4);
     border-radius: 10px;
+  }
+  /* payment styles */
+  #makePaymentForm{
+    width: 100%;
+    padding: 80px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    cursor: pointer;
+    margin-top: 70px;
+  }
+  /* this is for payment form part */
+  #amount{
+    font-size: 35px;
+    width: 600px;
+  }
+  .submit{
+    font-size: 30px;
+  }
+  .payment-btn{
+    font-size: 50px;
   }
   .v1{
     font-size: 0.4rem;
@@ -791,10 +812,10 @@ body{
     font-weight: 700;
   }
   .user-info .user-details > h1{
-    font-size: 80px;
+    font-size: 70px;
   }
   .user-info .user-details > h5{
-    font-size: 60px;
+    font-size: 50px;
   }
   .simple > a{
     font-size: 60px;
@@ -811,8 +832,16 @@ body{
     flex-direction: column;
     align-items: center;
   }
+
+  /* this is for nin select options */
+  .nin{
+    font-size: 30px;
+  }
+  .nin > option{
+    font-size: 15px;
+  }
   .sup-item > .h3{
-    font-size: 90px;
+    font-size: 50px;
     font-weight: 900;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
@@ -919,11 +948,43 @@ box-sizing: border-box;
 color: #eee;
 cursor: pointer;
 font-size: 18px;
-height: 50px;
+padding: 20px 50px;
+/* height: 50px; */
 margin-top: 38px;
 outline: 0;
-text-align: center;
-width: 100%;
+/* text-align: center; */
+/* width: 100%; */
+}
+.submit:hover,.submit:focus{
+  background-color: #06b;
+}
+
+.payment{
+  padding: 50px;
+}
+.payment > h1{
+  font-size: 50px;
+  font-weight: 900;
+  color: green;
+}
+
+#profile-form{
+  margin-left: 160px;
+  margin-bottom: 400px;
+}
+
+
+@media (orientation: portrait) {
+  .submit {
+    font-size: 50px;
+  }
+  .payment{
+    padding: 60px;
+  }
+  #profile-form .form .ic1 > input{
+    width: 660px;
+    font-size: 40px;
+  }
 }
 
 .submit:active {
@@ -1037,7 +1098,7 @@ padding: 0 2px;
   
   } */
 
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
   @media (max-width: 360px){
     #help-brodcast > summary{
       font-size: 20px;
@@ -1055,11 +1116,10 @@ padding: 0 2px;
     border-radius: 5px;
     box-sizing: border-box;
   }
-=======
+
   /* @media (max-width: 360px){
  
   } */
->>>>>>> 2bcd24b050dedd4adcfc9d5b8de0feab85702fe4
 
     /*Table Styles*/
   table {

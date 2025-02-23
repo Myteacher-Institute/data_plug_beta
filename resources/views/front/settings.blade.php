@@ -1,7 +1,7 @@
 @extends('layouts.user')
 
 @section('content')
-<div class="main"
+<div class="main">
     <div class="topbar">
       <div class="toggle">
           <i class="fa fa-navicon"></i>
@@ -14,7 +14,7 @@
       </> --}}
           <div class="user-img">
 
-                    <div onclick="return confirm('Are you sure to logout?')">
+                    {{-- <div onclick="return confirm('Are you sure to logout?')">
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
@@ -27,7 +27,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-                    </div>
+                    </div> --}}
           
               {{-- <img src="assset/img/SmartCity_connect_900.jpg" id="photo">
               <input type="file" id="file" accept="image/png, image/jpeg, image/gif" required/>
@@ -35,7 +35,7 @@
           </div>
       </div>
           
-          <div>
+<div>
 
             @if (session('error'))
                 <script>
@@ -48,7 +48,7 @@
                 </script>
             @endif
             
-            <form action="{{ url('update_details') }}" method="POST">
+            <form action="{{ url('update_details') }}" method="POST" id="profile-form">
                 @csrf
                 @method('PUT')
 
@@ -77,7 +77,7 @@
                 </div>
             </form>
 
-            <form action="{{ url('update_password') }}" method="POST" style="margin-top: 40px">
+            <form action="{{ url('update_password') }}" method="POST" style="margin-top: 40px;margin-left: 160px;">
                 @csrf
                 @method('PUT')
 
@@ -105,6 +105,6 @@
                     <button type="submit" class="submit">Update</button>
                 </div>
             </form>
-          </div>
+        </div>
 </div
 @endsection
