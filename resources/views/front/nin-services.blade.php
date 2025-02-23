@@ -42,13 +42,8 @@
                 </script>
               @endif
             <div class="home">
-<<<<<<< HEAD
                 <i class="fas fa-money-bill-1" aria-hidden="true"></i>
                 <p> {{ $value }}</p>
-=======
-                <i class="fas fa-id-card" aria-hidden="true"></i>
-                <p>NIN {{ $value }}</p>
->>>>>>> f03d821d6269673648d09b6333271aead81b1ccb
             </div>
 
             @if ($value == "nin-retrieval")

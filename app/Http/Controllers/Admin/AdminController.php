@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Help;
 use App\Models\NINServices;
+use App\Models\NINServicesRequest;
 use App\Models\Settings;
 use App\Models\Transactions;
 use App\Models\User;
@@ -20,10 +21,18 @@ use Illuminate\Support\Facades\Validator;
 class AdminController extends Controller
 {
     public function index() {
-        $users = User::where('role',0)->get();
+        $users = User::where('role',0)->count();
+        $nin_services = NINServices::count();
+        $nin_service_requests = NINServicesRequest::count();
+        $transactions = Transactions::count();
 
         return view('admin.index',
-        ['users' => $users]
+        [
+            'users' => $users,
+            'nin_services' => $nin_services,
+            'nin_service_requests' => $nin_service_requests,
+            'transactions' => $transactions
+        ]
     );
     }
 

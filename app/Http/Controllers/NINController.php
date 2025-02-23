@@ -64,6 +64,8 @@ class NINController extends Controller
             $nin_service_request->dob = $request->dob;
             $nin_service_request->save();
 
+            Auth::user()->decrement('balance', $nin_service->amount);
+
             return redirect()->back()->with('message', 'Request Sent Successfully.\nCheck Your Dashboard In 24 Hours');
         }
         else {

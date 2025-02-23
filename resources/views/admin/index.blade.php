@@ -25,29 +25,29 @@
             <div class="val-box" onclick="window.location.href='users'" style="cursor: pointer;">
                 <img src="icons/users.svg" alt="" class="icons">
                 <div>
-                    <h3>{{ count($users) }}</h3>
+                    <h3>{{ $users }}</h3>
                     <span>Total Users</span>
                 </div>
             </div>
-            <div class="val-box" onclick="window.location.href='users'" style="cursor: pointer;">
-                <img src="icons/dollar-sign.svg" alt="" class="icons">
+            <div class="val-box" onclick="window.location.href='services'" style="cursor: pointer;">
+                <img src="icons/request.svg" alt="" class="icons">
                 <div>
-                    <h3>$3,326</h3>
-                    <span>Total Wallet</span>
+                    <h3>{{ $nin_services }}</h3>
+                    <span>Total Services</span>
                 </div>
             </div>
             <div class="val-box" onclick="window.location.href='transactions'" style="cursor: pointer;">
                 <img src="icons/cart.svg" alt="" class="icons">
                 <div>
-                    <h3>234,567</h3>
-                    <span>Total Transactions</span>
+                    <h3>{{ $nin_service_requests }}</h3>
+                    <span>Total Requests</span>
                 </div>
             </div>
-            <div class="val-box"onclick="window.location.href='users'" style="cursor: pointer;">
+            <div class="val-box"onclick="window.location.href='transactions'" style="cursor: pointer;">
                 <img src="icons/dollar-sign.svg" alt="" class="icons">
                 <div>
-                    <h3>89,3267</h3>
-                    <span>Total Payments</span>
+                    <h3>{{ $transactions }}</h3>
+                    <span>Total Transactions</span>
                 </div>
             </div>
         </div>
