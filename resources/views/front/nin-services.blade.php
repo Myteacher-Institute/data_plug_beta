@@ -42,34 +42,10 @@
             </div>
 
             @if ($value == "retrieval")
-            <form method="POST" enctype="multipart/form-data">
-                @csrf
-
-                <div class="form">
-                    <div class="input-container ic1" style="margin-bottom: 50px">
-                    <input id="amount" name="amount" class="input" type="text" style="color: black;"/><br>
-                    <label for="amount" >Enter Amount <i class="fas fa-coins"></i></label>
-
-                    </div>
-
-                    <button type="submit" class="submit">Continue</button>
-                </div>
-            </form>
+            @include('includes/nin-retrieving')
 
             @elseif ($value == "modification")
-            <form method="POST" enctype="multipart/form-data">
-                @csrf
-
-                <div class="form">
-                    <div class="input-container ic1" style="margin-bottom: 50px">
-                    <input id="amount" name="amount" class="input" type="text" style="color: black;"/><br>
-                    <label for="amount" >Enter Amount <i class="fas fa-coins"></i></label>
-
-                    </div>
-
-                    <button type="submit" class="submit">Continue</button>
-                </div>
-            </form>
+            @include('includes/nin-modification')
             @else
                 <h3 style="color: red">Invalida Request</h3>
             @endif
