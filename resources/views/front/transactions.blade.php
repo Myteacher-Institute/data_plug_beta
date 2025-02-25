@@ -3,6 +3,11 @@
 @section('content')
 @php
     $pay = App\Models\Payments::where('id', Auth::user()->id)->get();
+
+    $tranc_data = App\Models\Transactions::selectRaw('DATE(created_at) as date, SUM(amount) as total')  
+        ->groupBy('date')  
+        ->orderBy('date')  
+        ->get();
 @endphp
 <div class="main">
     <div class="topbar">
@@ -16,7 +21,7 @@
           </label>
       </div> --}}
       <div class="user-img">
-          <div onclick="return confirm('Are you sure to logout?')">
+          {{-- <div onclick="return confirm('Are you sure to logout?')">
               <a href="{{ route('logout') }}"
                  onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();">
@@ -29,7 +34,7 @@
               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
               </form>
-          </div>
+          </div> --}}
           {{-- <img src="assset/img/SmartCity_connect_900.jpg" id="photo">
           <input type="file" id="file" accept="image/png, image/jpeg, image/gif" required/>
           <label for="file" id="uploadbtn"><i class="fas fa-camera"></i></label> --}}
@@ -52,14 +57,16 @@
                 </div>
                 <div id="chart">
                   <canvas id="pieChart" style="max-width: 100%"></canvas>
+                  {{-- <canvas id="transactionChart" width="400" height="200"></canvas>    --}}
                 </div>
-                <div id="chart">
+                <div id="trac_link_table">
                   <a href="{{ url('/view_transaction_table') }}">Transaction History</a>
                 </div>
               </div>
             </div>
           </div>
           
+          {{-- <p id="tr">{{ $tranc_data }}</p> --}}
           {{-- @foreach ($transactions as $item)
           @if (!$transactions)
           <p>error</p>

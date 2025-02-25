@@ -1,105 +1,136 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    display: flex;
+/* General Styles */  
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f7f9fc;  
+    margin: 0;  
+    padding: 0;  
+}  
+
+.login-form {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    padding: 20px;  
+}  
+
+#section-form {  
+    background-color: #ffffff;  
+    border-radius: 8px;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+    padding: 30px;  
+    width: 100%;  
+    max-width: 850px;  
+}  
+
+/* Header Style */  
+.login-header {  
+    font-size: 24px;  
+    font-weight: bold;  
+    margin-bottom: 20px;  
+    text-align: center;  
+}  
+
+/* Input Fields */  
+.email, .pass, .remb {  
+    margin-bottom: 20px;  
+}  
+
+label {  
+    display: block;  
+    margin-bottom: 5px;  
+    font-weight: 600;  
+}  
+
+input[type="email"], input[type="password"] {  
+    width: 100%;  
+    padding: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    transition: border-color 0.3s;  
+}  
+
+input[type="email"]:focus, input[type="password"]:focus {  
+    border-color: #007bff;  
+    outline: none;  
+}  
+
+/* Error Message */  
+.invalid-feedback {  
+    color: red;  
+    font-size: 12px;  
+}  
+
+/* Remember Me Checkbox */  
+.form-check {  
+    display: flex;  
+    align-items: center;  
+}  
+
+.form-check-input {  
+    margin-right: 10px;  
+}  
+
+/* Button Styles */  
+.login-btn {  
+    display: flex;  
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-#section-form{
-    margin-top: 70px;
-}
-#email:invalid{
-    border: 1px solid rgb(214, 16, 16);
-}
+    flex-direction: column; 
+    gap: 20px; 
+    align-items: center;  
+}  
 
-@media (orientation: portrait) {
-    .container{
-        background-color: red;
-        width: 700px;
-        height: 400px;
-    }
-    .card{
-        /*  */
-    }
-    .card-body{
-        background: rgba(0, 0, 255, 0.479);
-        width: 100%;
-    }
+.btn {  
+    padding: 10px 15px;  
+    border: none;  
+    border-radius: 4px;  
+    cursor: pointer;  
+}  
 
-    /* #section-form{
-        margin-top: 0;
-    }
-    #email{
-        margin-bottom: 20px;
-    }
-    #submit-btn{
-        margin-top: 20px;
-    }
-    #error-message{
-        margin-top: 20px;
-    }
-    #success-message{
-        margin-top: 20px;
-    }
-    #section-form label{
-        margin-bottom: 10px;
-    }
-    #section-form input, #section-form select{
+.btn-primary {  
+    background-color: #007bff;  
+    color: white;  
+}  
+
+.btn-primary:hover {  
+    background-color: #0056b3;  
+}  
+
+/* Link Styles */  
+a {  
+    color: #007bff;  
+    text-decoration: none;  
+    display: block;  
+    text-align: center;  
+    margin-top: 10px;  
+}  
+
+a:hover {  
+    text-decoration: underline;  
+}  
+
+/* Responsive Styles */  
+@media (orientation: portrait) {  
+    #section-form {  
+        padding: 20px;  
+    }  
+
+    .login-header {  
+        font-size: 90px;  
+    }  
+
+    input[type="email"], input[type="password"] {  
+        padding: 20px 40px;
+        font-size: 40px;  
+    }  
+
+    .login-btn > .btn {  
+        /* padding: 20px 90px;
+        font-size: 50px;   */
         width: 100%;
-        padding: 10px;
+        font-size: 40px;
     }
-    #section-form button{
-        width: 100%;
-        padding: 10px 20px;
-    }
-    #section-form input[type="email"]{
-        margin-bottom: 30px;
-    }
-    #section-form select{
-        margin-bottom: 0;
-    }
-    #section-form textarea{
-        margin-bottom: 30px;
-    }
-    #section-form fieldset{
-        margin-bottom: 30px;
-    }
-    #section-form fieldset legend{
-        font-weight: bold;
-    }
-    #section-form fieldset label{
-        margin-bottom: 10px;
-    }
-    #section-form fieldset input[type="checkbox"], #section-form fieldset input[type="radio"]{
-        margin-right: 10px;
-    }
-    #section-form fieldset button{
-        margin-top: 10px;
-    }
-    #section-form fieldset select{
-        margin-bottom: 20px;
-    }
-    #section-form fieldset textarea{
-        margin-bottom: 0;
-    }
-    #section-form fieldset fieldset{
-        margin-bottom: 20px;
-    }
-    #section-form fieldset fieldset label{
-        margin-bottom: 10px;
-    }
-    #section-form fieldset fieldset input[type="checkbox"], #section-form fieldset fieldset input[type="radio"]{
-        margin-right: 10px;
-    }
-    #section-form fieldset fieldset button{
-        margin-top: 10px;
-    } */
-}
+    label {  
+        font-size: 40px;   
+    }    
+}  

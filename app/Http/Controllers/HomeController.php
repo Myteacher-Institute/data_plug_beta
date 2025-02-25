@@ -122,6 +122,8 @@ class HomeController extends Controller
     {
         $transactions = Transactions::where('user_id', Auth::user()->user_id)->get();
 
+ // Fetch data from the database 
+
         // $all = Transactions::find('user_id')->where('user_id', Auth::user()->user_id);
         // $tr  = $transactions->email;
         // $labels = [];
@@ -242,4 +244,15 @@ class HomeController extends Controller
     public function bills(){
         return view('front.bills');
     }
+
+
+    // this functions here are api function
+    public function trac_data(){
+        $transactions = Transactions::selectRaw('DATE(created_at) as date, SUM(amount) as total')  
+        ->groupBy('date')  
+        ->orderBy('date')  
+        ->get(); // Fetch data from the database  
+
+        return response()->json($transactions); 
+    } 
 }

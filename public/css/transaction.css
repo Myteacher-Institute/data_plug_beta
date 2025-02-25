@@ -19,13 +19,15 @@
 .card-body{
     padding: 20px;
     border-radius: 0;
-    box-shadow: 12px 10px 30px #000;
+    /* box-shadow: 0 0 12px #000; */
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px;
 }
 #chart{
-    width: 30%;
+    width: 60%;
 }
 .transaction-details-txt{
     color: #102b86;
@@ -39,9 +41,19 @@
 
 }
 
-@media (max-width: 768px) {
+#trac_link_table > a{
+    font-size: 1.1rem;
+    background: #102b86;
+    padding: 20px 40px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+@media (orientation: portrait) {
     #chart, #pieChart {
         width: 100%;
+        margin-top: 100px;
         height: 500px;
     }
     .card-body{
@@ -53,5 +65,30 @@
     }
     .transaction .card-trac .card-header{
         font-size: 1rem;
+    }
+    #trac_link_table{
+        margin: 200px 30px;
+    }
+    #trac_link_table > a{
+        font-size: 1rem;
+        background: #102b86;
+        padding: 30px 60px;
+    }
+    .transaction-details-txt{
+        color: #fff;
+        background: #102b86;
+        font-size: 60px;
+        text-align: center;
+    }
+    .chart:not(.transaction-details-txt) > *{
+        font-size: 60px;
+    }
+    .transaction .card-trac .card-header{
+        /* display: inline; */
+        padding: 20px;
+        background: rgb(11, 11, 87);
+        font-size: 70px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
     }
 }
