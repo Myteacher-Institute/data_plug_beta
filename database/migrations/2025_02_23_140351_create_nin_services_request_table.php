@@ -18,14 +18,18 @@ return new class extends Migration
             $table->integer('user_id');
             $table->string('service_type');
             $table->string('firstname');
+            $table->string('new_firstname')->nullable();
             $table->string('middlename')->nullable();
+            $table->string('new_middlename')->nullable();
             $table->string('lastname');
+            $table->string('new_lastname')->nullable();
             $table->string('nin_number');
             $table->string('email');
             $table->string('phone_number');
             $table->string('whatsapp_number');
-            $table->string('tracking_id');
+            $table->string('tracking_id')->nullable();
             $table->string('dob');
+            $table->string('new_dob')->nullable();
             $table->timestamps();
         });
     }

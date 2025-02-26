@@ -65,7 +65,7 @@
                             </form>
                         </td>
                         <td class="role">
-                            <a href="admin/view-service-requests">View Requests</a>
+                            <a href="{{ url('admin/view-service-requests') }}">View Requests</a>
                         </td>
                     </tr>
                     @endforeach

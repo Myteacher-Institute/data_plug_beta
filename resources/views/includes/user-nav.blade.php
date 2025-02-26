@@ -20,7 +20,7 @@
                 <span class="icon">
                 <i class="fas fa-arrow-trend-up v1"></i>
                 </span>
-                <span class="title">Request</span>
+                <span class="title">Requests</span>
             </a>
         </li>
 

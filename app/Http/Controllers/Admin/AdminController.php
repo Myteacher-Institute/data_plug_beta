@@ -49,6 +49,11 @@ class AdminController extends Controller
         return view('admin.services', ['services' => $services]);
     }
 
+    public function view_service_requests() {
+        $service_requests = NINServicesRequest::all();
+        return view('admin.service_requests', ['service_requests' => $service_requests]);
+    }
+
     public function add_service() {
         return view('admin.add-service');
     }
