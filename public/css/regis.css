@@ -32,7 +32,7 @@ body {
 }  
 
 /* Input Fields */  
-.email, .pass, .remb {  
+.email, .pass, .remb, .name, .phone, .pass_con {  
     margin-bottom: 20px;  
 }  
 
@@ -42,7 +42,7 @@ label {
     font-weight: 600;  
 }  
 
-input[type="email"], input[type="password"] {  
+input[type="email"], input[type="password"], input[type="text"], input[type="phone"] {  
     width: 100%;  
     padding: 10px;  
     border: 1px solid #ccc;  
@@ -105,7 +105,7 @@ a {
     margin-top: 10px;  
 }  
 
-a:hover {  
+a:hover, a:focus {  
     text-decoration: underline;  
 }  
 
@@ -119,18 +119,22 @@ a:hover {
         font-size: 90px;  
     }  
 
-    input[type="email"], input[type="password"] {  
+    input[type="email"], input[type="password"], input[type="text"], input[type="phone"] {  
         padding: 20px 40px;
-        font-size: 40px;  
+        font-size: 50px;  
     }  
 
-    .login-btn > .btn {  
+    .login-btn > .btn, .reg-btn > .btn {  
         /* padding: 20px 90px;
         font-size: 50px;   */
         width: 100%;
-        font-size: 40px;
+        font-size: 60px;
     }
     label {  
-        font-size: 40px;   
+        font-size: 50px;   
+    }
+    a {  
+        font-size: 40px;  
+        margin-top: 10px;  
     }    
 }  
