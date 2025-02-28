@@ -8,7 +8,7 @@
 {{-- i suggest that this place should be for payment form before the user proceed with nin retriving form --}}
 
 <div class="nin-rt-form">
-    <form action="{{ url('nin-retrieval') }}" method="POST">
+    <form action="{{ url('nin-retrieval') }}" method="POST" onsubmit="return confirm('Are you sure to proceed with this retrieval?')">
         @csrf
 
         <input type="hidden" value={{ $value }} name="service_type">
@@ -24,6 +24,10 @@
         <div class="nin-rt-form-group">
             <input type="text" id="nin" name="middlename" placeholder="Enter your middlename">
         </div>
+
+        <div class="nin-rt-form-group">
+            <input type="date" id="nin" name="dob" placeholder="Enter your date of birth"> <i>(DOB)</i>
+        </div> 
 
         <div class="nin-rt-form-group">
             <input type="text" id="nin" name="nin_number" placeholder="Enter your ninNumber">
@@ -42,11 +46,7 @@
         </div>
 
         <div class="nin-rt-form-group">
-            <input type="email" id="nin" name="email" placeholder="Enter your email">
-        </div>
-
-        <div class="nin-rt-form-group">
-            <input type="date" id="nin" name="dob" placeholder="Enter your date of birth"> <i>(DOB)</i>
+            <input type="email" id="nin" name="email" placeholder="Enter your email address">
         </div>
 
         @php
@@ -60,7 +60,8 @@
 
     {{-- this will be the success message after the form has been submitted --}}
 
-    <p>Retrieving will be sent to your Whatsapp number or email with 24 hours 🕑</p>
+    <p>Make sure your details are correct!</p>
+    <p>NIN retrieval will be sent to your dashboard within 24 hours 🕑</p>
 
 </div>
 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Help;
 use App\Models\NINServices;
+use App\Models\NINServicesRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Settings;
@@ -115,7 +116,8 @@ class HomeController extends Controller
     }
     public function services()
     {
-        return view('front.services');
+        $service_request = NINServicesRequest::all();
+        return view('front.services', ['service_request' => $service_request]);
     }
 
     public function transactions()

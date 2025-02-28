@@ -43,6 +43,7 @@ Route::post('/buy-data', [App\Http\Controllers\VTUController::class, 'buy_data']
 Route::get('/nin-services', [App\Http\Controllers\NINController::class, 'nin_services']);
 Route::get('/display-value', [App\Http\Controllers\NINController::class, 'display_value']);
 Route::post('/nin-retrieval', [App\Http\Controllers\NINController::class, 'nin_retrieval']);
+Route::post('/nin-modification', [App\Http\Controllers\NINController::class, 'nin_modification']);
 
 
 // Payment Routes
@@ -66,6 +67,7 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::get('/index', [AdminController::class, 'index']);
     Route::get('/users', [AdminController::class, 'users']);
     Route::get('/services', [AdminController::class, 'services']);
+    Route::get('/view-service-requests', [AdminController::class, 'view_service_requests']);
     Route::get('/add-service', [AdminController::class, 'add_service']);
     Route::post('/store-service', [AdminController::class, 'store_service']);
     Route::get('/edit-service/{id}', [AdminController::class, 'edit_service']);

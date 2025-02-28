@@ -43,7 +43,7 @@
               @endif
             <div class="home">
                 <i class="fas fa-money-bill-1" aria-hidden="true"></i>
-                <p> {{ $value }}</p>
+                <p> {{ Str::upper($value) }}</p>
             </div>
 
             @if ($value == "nin-retrieval")

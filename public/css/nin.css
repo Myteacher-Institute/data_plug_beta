@@ -31,6 +31,7 @@
     flex-direction: column;
     gap: 40px;
 }
+
 .nin-rt-form-group > input{
     padding: 14px;
     border-radius: 5px;
