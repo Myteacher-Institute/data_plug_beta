@@ -963,7 +963,7 @@ outline: 0;
   padding: 50px;
 }
 .payment > h1{
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 900;
   color: green;
 }
@@ -973,6 +973,11 @@ outline: 0;
   margin-bottom: 400px;
 }
 
+/* #profile-form .form > h2{
+  font-size: 20px;
+  font-weight: 900;
+  color: green;
+} */
 
 @media (orientation: portrait) {
   .submit {
@@ -994,6 +999,7 @@ outline: 0;
     color: green;
   }
 }
+
 
 .submit:active {
 background-color: #06b;
@@ -1163,6 +1169,12 @@ padding: 0 2px;
   }
   /* Add this CSS to your styles.css file or within a <style> tag in the head section of your HTML file */
 
+  @media (orientation: portrait){
+    th, td {
+      font-size: 22px;
+    }
+  }
+   
 .help-box {
   width: 80%;
   margin: 0 10px;

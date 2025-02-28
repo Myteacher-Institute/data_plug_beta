@@ -19,6 +19,9 @@ const labels = [
     'December'
 ];
 
+// var transactions = @json({$transactions});  
+// console.log(transactions); 
+
 const data = {
     labels: labels,
     datasets: [{

@@ -63,12 +63,29 @@
                     asset('assset/img/SmartCity_connect_900.jpg') }}" alt="" class="service-box2">
     </div>
 
-    <div class="services">
+    {{-- <div class="services">
         <div class="services-box">
             <div class="service-box1">
                 <video src="{{ asset('images/1081905350-preview.mp4') }}" controls autoplay loop></video>
             </div>
             <video src="{{ asset('images/1073657882-preview.mp4') }}" class="service-box2" controls autoplay loop>
+        </div>
+    </div> --}}
+
+    <div class="services">
+        <h1 class="our-services">NIN Services</h1>
+        <div class="services-box">
+            <div class="service-box1">
+                <h2 class="services-head-text">{{ __('NIN Modification & Retriever we got you') }}</h2>
+    
+                <p class="services-text">
+                    Niger people,  don't end up like this people, Drop your details and it will be solve ASP
+                </p>
+            </div>
+            <img
+                src="
+                    {{
+                        asset('images/ninpeople.jpeg') }}" alt="" class="service-box2">
         </div>
     </div>
 

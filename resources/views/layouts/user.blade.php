@@ -38,7 +38,16 @@
 
     <script src="dashboard.js"></script>
     <!-- <script src="pre-loader.js"></script> -->
-     <script src="profile.js"></script>
-     
+     {{-- <script src="profile.js"></script> --}}
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+
+
+
+
+     {{-- <script>
+
+    </script>
+         --}}
+
 </body>
 </html>
