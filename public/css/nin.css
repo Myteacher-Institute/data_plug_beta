@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-shadow: border-box;
+}
+
+.nin-rt,.nin-m{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px;
+}
+
+#nin-rt-header,.nin-md-header{
+    padding: 30px;
+    background-color: rgba(22, 94, 22, 0.678);
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    width: 50%;
+}
+.nin-rt > label{
+    font-weight: bold;
+    color: #333;
+}
+.nin-rt-form,.nin-md-form{
+    margin: 30px 0;
+}
+.nin-rt-form > form,.nin-md-form > form{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.nin-rt-form-group > input{
+    padding: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 50%;
+}
+
+.nin-rt-form-group-btn{
+    padding: 10px 20px;
+}
+.nin-rt-form-group-btn > button{
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 20px;
+    background-color: #18802e;
+    padding: 10px 30px;
+}
+.nin-rt-form-group-btn > button:hover{
+    background-color: #136225;
+}
+
+@media (orientation: portrait){
+    #nin-rt-header,.nin-md-header{
+        background-color: transparent;
+        color: #18802e;
+        width: 100%;
+    }       
+    #nin-rt-header > h1,.nin-md-header > h1{
+        font-size: 50px;
+    }
+    #nin-rt-header > p,.nin-md-header > p{
+        font-size: 50px;
+    }
+    .nin-rt > label{
+        font-size: 34px;
+    }
+    .nin-rt-form-group > input{
+        padding: 30px;
+        border-radius: 5px;
+        font-size: 30px;
+        border: 1px solid #ccc;
+        width: 80%;
+    }
+    .nin-rt-form-group-btn > button{
+        font-size: 38px;
+        border-radius: 20px;
+        padding: 15px 80px;
+    }
+    .nin-rt-form-group > i,.nin-rt-form-group-btn > i{
+        font-size: 25px;
+    }
+}

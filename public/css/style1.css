@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+.hero{
+    width: 100%;
+    /* height: 100%; */
+    /* background-position: center; */
+    /* background-size: cover; */
+    background: #fff;
+    padding: 10px 10%;
+    overflow-x: hidden;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    /* position: relative; */
+}
+nav{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.a > .logo{
+    width: 70px;
+    border-radius: 30px;
+}
+
+nav ul{
+    display: inline-flex;
+    list-style: none;
+    gap: 30px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 10px 15px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #000;
+    transition: all ease-in-out 0.6s;
+    font-weight: 400;
+}
+
+nav ul li a:hover:after{
+    content: '';
+    padding: 2px;
+    background: rgb(12, 12, 97) !important;
+    /* background: linear-gradient(45deg, #df4811, #c430d7); */
+    display: block;
+}
+.login-btn{
+    text-decoration: none;
+    color: #000;
+    margin-right: 15px;
+    font-weight: 400;
+}
+.login-btn .fa-arrow-right-from-bracket{
+    font-size: 1.3rem;
+    padding: 0 10px;
+}
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: white !important;
+    background-image: linear-gradient(45deg, rgb(9, 9, 83), rgb(9, 9, 60));
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+}
+.content{
+    margin-top: 10px;
+    max-width: 600px;
+}
+.content h1{
+    font-size: 70px;
+    color: #222;
+}
+.content p{
+    margin: 10px 0 30px;
+    color: #333;
+}
+.content .btn{
+    padding: 15px 80px;
+    font-size: 16px;
+}
+.content .btn:hover{
+    transform: scale(1.1);
+    color: rgb(17, 17, 100) !important;
+    background: #fff;
+}
+.btn:hover{
+    /* border-top-right-radius: 30px; */
+    transform: scale(1.1);
+}
+.features-img{
+    width: 350px;
+    /* position: absolute; */
+    position: relative;
+    /* bottom: 0; */
+    /* right: 10.5%; */
+}
+.arc{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.7s linear forwards;
+
+}
+
+nav .fa-bars{
+    color: #222;
+    font-size: 30px;
+    display: none;
+}
+.nav-system .reg{
+    /* display: none; */
+    visibility: hidden;
+}
+.phone-box{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.phone-sec{
+    padding: 10px;
+    transition: all 0.6s ease-in-out;
+}
+.phone-sec:hover,.phone-sec:focus{
+    transform: scale(1.2);
+}
+.phone-sec > i{
+    background: blue;
+    padding: 30px;
+    border-radius: 60px;
+    transition: all 0.6s ease-in-out;
+    color: #fff;
+}
+.phone-sec > i:hover{
+    transform: scale(1.2);
+}
+ @keyframes moveup{
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+ }
+
+ @media (max-width: 768px){
+    nav ul{
+        flex-direction: column;
+        gap: 20px;
+        display: none;
+    }
+    nav .ul{
+        background: #fff;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 210px;
+        line-height: 60px;
+        z-index: 10;
+        padding: 50px;
+        border-radius: 20px;
+    }
+    nav ul li a{
+        font-size: 1.2rem;
+    }
+   .content{
+    margin-top: 20px;
+ }
+nav .fa-bars{
+    display: block;
+    cursor: pointer;
+ }
+.nav-system .reg{
+    /* display: block; */
+    visibility: visible;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.nav-system .reg-btn{
+    display: none;
+    position: absolute;
+    left: 90px;
+    top: 70px;
+    background: #fff;
+    padding: 20px;
+    align-items: center;
+}
+nav{
+    display: flex;
+    gap: 80px;
+}
+ }
+
+ @media (max-width: 400px) {
+    nav{
+        display: inline-flex;
+        gap: 30px;
+    }
+
+    .features-img{
+        width: 200px;
+    }
+
+    nav .ul {
+        position: absolute;
+        top: 70px;
+        left: 80px;
+    }
+ }
+
+ @media (max-width: 500px) {
+    nav{
+        display: inline-flex;
+        gap: 30px;
+    }
+
+    nav .ul {
+        position: absolute;
+        top: 70px;
+        left: 40px;
+    }
+ }
+
+ @media (max-width: 200px) {
+    nav{
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    nav .ul {
+        position: absolute;
+        top: 70px;
+        left: 10px;
+        padding: 10px;
+    }
+    .features-img{
+        width: 100px;
+    }
+ }
+
+ @media (max-width: 400px) {
+    nav{
+        display: inline-flex;
+        gap: 30px;
+    }
+ }

@@ -1,0 +1,68 @@
+.slider-container {
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+  }
+
+  .card-slider {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+
+  .card {
+    min-width: 200px; /* Default width of the card */
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0 10px; /* space between cards */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Button styles */
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    z-index: 10;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .card {
+      min-width: 150px; /* Smaller cards for medium screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      min-width: 120px; /* Even smaller cards for small screens */
+    }
+
+    .card-slider {
+      flex-wrap: nowrap; /* Keep cards in a single row */
+    }
+
+    button {
+      font-size: 18px; /* Smaller buttons on mobile */
+      padding: 5px;
+    }
+  }

@@ -1,0 +1,140 @@
+/* General Styles */  
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f7f9fc;  
+    margin: 0;  
+    padding: 0;  
+}  
+
+.login-form {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    height: 100vh;  
+    padding: 20px;  
+}  
+
+#section-form {  
+    background-color: #ffffff;  
+    border-radius: 8px;  
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+    padding: 30px;  
+    width: 100%;  
+    max-width: 850px;  
+}  
+
+/* Header Style */  
+.login-header {  
+    font-size: 24px;  
+    font-weight: bold;  
+    margin-bottom: 20px;  
+    text-align: center;  
+}  
+
+/* Input Fields */  
+.email, .pass, .remb, .name, .phone, .pass_con {  
+    margin-bottom: 20px;  
+}  
+
+label {  
+    display: block;  
+    margin-bottom: 5px;  
+    font-weight: 600;  
+}  
+
+input[type="email"], input[type="password"], input[type="text"], input[type="phone"] {  
+    width: 100%;  
+    padding: 10px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    transition: border-color 0.3s;  
+}  
+
+input[type="email"]:focus, input[type="password"]:focus {  
+    border-color: #007bff;  
+    outline: none;  
+}  
+
+/* Error Message */  
+.invalid-feedback {  
+    color: red;  
+    font-size: 12px;  
+}  
+
+/* Remember Me Checkbox */  
+.form-check {  
+    display: flex;  
+    align-items: center;  
+}  
+
+.form-check-input {  
+    margin-right: 10px;  
+}  
+
+/* Button Styles */  
+.login-btn {  
+    display: flex;  
+    justify-content: center;
+    flex-direction: column; 
+    gap: 20px; 
+    align-items: center;  
+}  
+
+.btn {  
+    padding: 10px 15px;  
+    border: none;  
+    border-radius: 4px;  
+    cursor: pointer;  
+}  
+
+.btn-primary {  
+    background-color: #007bff;  
+    color: white;  
+}  
+
+.btn-primary:hover {  
+    background-color: #0056b3;  
+}  
+
+/* Link Styles */  
+a {  
+    color: #007bff;  
+    text-decoration: none;  
+    display: block;  
+    text-align: center;  
+    margin-top: 10px;  
+}  
+
+a:hover, a:focus {  
+    text-decoration: underline;  
+}  
+
+/* Responsive Styles */  
+@media (orientation: portrait) {  
+    #section-form {  
+        padding: 20px;  
+    }  
+
+    .login-header {  
+        font-size: 90px;  
+    }  
+
+    input[type="email"], input[type="password"], input[type="text"], input[type="phone"] {  
+        padding: 20px 40px;
+        font-size: 50px;  
+    }  
+
+    .login-btn > .btn, .reg-btn > .btn {  
+        /* padding: 20px 90px;
+        font-size: 50px;   */
+        width: 100%;
+        font-size: 60px;
+    }
+    label {  
+        font-size: 50px;   
+    }
+    a {  
+        font-size: 40px;  
+        margin-top: 10px;  
+    }    
+}  

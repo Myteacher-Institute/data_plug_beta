@@ -1,0 +1,94 @@
+.transaction{
+    background: rgb(207, 141, 141);
+}
+.transaction .card-trac{
+    background: #fff;
+    padding: 20px;
+}
+.transaction .card-trac .card-header{
+    /* display: inline; */
+    padding: 20px;
+    background: rgb(11, 11, 87);
+    font-size: 2rem;
+    display: inline-flex;
+    gap: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+}
+.card-body{
+    padding: 20px;
+    border-radius: 0;
+    /* box-shadow: 0 0 12px #000; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px;
+}
+#chart{
+    width: 60%;
+}
+.transaction-details-txt{
+    color: #102b86;
+}
+#pieChart{
+    max-width: 100%;
+}
+#myChart{
+    width: 100%;
+    height: 300px;
+
+}
+
+#trac_link_table > a{
+    font-size: 1.1rem;
+    background: #102b86;
+    padding: 20px 40px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+@media (orientation: portrait) {
+    #chart, #pieChart {
+        width: 100%;
+        margin-top: 100px;
+        height: 500px;
+    }
+    .card-body{
+        padding: 5px;
+        box-shadow: 0 0 0 #000;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .transaction .card-trac .card-header{
+        font-size: 1rem;
+    }
+    #trac_link_table{
+        margin: 200px 30px;
+    }
+    #trac_link_table > a{
+        font-size: 1rem;
+        background: #102b86;
+        padding: 30px 60px;
+    }
+    .transaction-details-txt{
+        color: #fff;
+        background: #102b86;
+        font-size: 60px;
+        text-align: center;
+    }
+    .chart:not(.transaction-details-txt) > *{
+        font-size: 60px;
+    }
+    .transaction .card-trac .card-header{
+        /* display: inline; */
+        padding: 20px;
+        background: rgb(11, 11, 87);
+        font-size: 70px;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+}

@@ -1,0 +1,23 @@
+.help{
+    padding: 30px;
+    width: 90%;
+    /* overflow-x: hidden; */
+    gap: 20px;
+    /* background: red; */
+    /* margin-right: 400px; */
+}
+
+.help .help-box{
+    width: 100%;
+    padding: 20px;
+    /* background-color: gray; */
+}
+
+.help .help-box .help-text{
+    font-size: 24px;
+    color: #15172b;
+    text-align: start;
+}
+.help .help-box #help-dropdown-wrapper{
+    padding: 40px;
+}

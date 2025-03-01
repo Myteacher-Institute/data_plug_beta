@@ -1,0 +1,43 @@
+#delete-help {
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 20px; /* Space above the section */
+}
+
+#delete-help h1 {
+    color: #12123b; /* Dark text color */
+    font-size: 24px; /* Font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+#delete-help .form {
+    display: flex;
+    flex-direction: column;
+}
+
+#delete-help .input-container {
+    margin-bottom: 20px; /* Space between input fields */
+}
+
+#delete-help .input {
+    width: 100%; /* Full width input */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+}
+
+#delete-help .submit {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+#delete-help .submit:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}

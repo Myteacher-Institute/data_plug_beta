@@ -1,0 +1,108 @@
+.service_section {
+    --bg-color-2: #2424c9de;
+    background: var(--bg-color-2);
+    position: relative;
+    color: #fff;
+
+}
+.layout_padding {
+    padding: 90px 0;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.heading_container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.detail-box > h5{
+    color: rgb(17, 17, 39);
+}
+.detail-box > h5:hover,.detail-box > h5:focus{
+    color: #fff;
+    cursor: copy;
+}
+.img-box{
+    margin: 20px 0;
+}
+.btn-box > a{
+    color: #fff;
+    padding: 20px 60px;
+    border-radius: 40px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-left: 600px;
+    text-decoration: none;
+    background: rgba(15, 183, 212, 0.918);
+}
+.btn-box > a:hover,.btn-box > a:focus{
+    transform: scale(1.2);
+    background: rgba(22, 149, 172, 0.918);
+    color: #dbd2d2;
+}
+.cr{
+    background: rgba(255, 255, 255, 0.137);
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 10px;
+    transition: all 0.6s ease-in-out;
+    color: #fff;
+}
+.cr:hover,.cr:focus{
+    transform: scale(1.1);
+}
+@media (max-width: 780px){
+    .btn-box > a{
+        color: #fff;
+        padding: 30px 0;
+        font-size: 1.1rem;
+        font-weight: 800;
+        margin-left: 10px;
+        text-decoration: underline;
+        background: transparent;
+    }
+    .btn-box > a:hover,.btn-box > a:focus{
+        transform: scale(1.2);
+        background: transparent;
+        color: #dbd2d2;
+    }
+}
+
+@media (max-width: 1000px){
+    .btn-box > a{
+        color: #fff;
+        padding: 30px 0;
+        font-size: 1.2rem;
+        font-weight: 800;
+        margin-left: 10px;
+        text-decoration: underline;
+        background: transparent;
+    }
+    .btn-box > a:hover,.btn-box > a:focus{
+        transform: scale(1.2);
+        background: transparent;
+        color: #dbd2d2;
+    }
+}
+@media (max-width: 400px){
+    .cr{
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        color: #fff;
+    }
+}

@@ -1,0 +1,66 @@
+.services
+{
+    background: #fff;
+    padding: 50px 0;
+}
+
+.our-services
+{
+    color: rgb(15, 15, 117);
+    font-weight: 800;
+    padding: 0 40px;
+}
+.services .services-box
+{
+    background: rgba(17, 17, 136, 0.856);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.services .services-box .service-box1
+{
+    width: 40%;
+}
+.services .services-box .service-box2
+{
+    width: 50%;
+    border-radius: 20px;
+}
+@media (max-width: 500px) {
+    .services .services-box
+    {
+        padding: 8px;
+        gap: 30px;
+        display: block;
+    }
+.services .services-box .service-box1
+{
+    width: 90%;
+}
+.services .services-box .service-box2
+{
+    width: 90%;
+    border-radius: 10px;
+}
+}
+@media (max-width: 700px) {
+    .services .services-box
+    {
+        padding: 8px;
+        gap: 30px;
+        display: block;
+    }
+.services .services-box .service-box1
+{
+    width: 100%;
+}
+.services .services-box .service-box2
+{
+    width: 100%;
+    border-radius: 10px;
+}
+}

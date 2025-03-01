@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    height: 100vh;
+}
+
+.wrapper span {
+    position: fixed;
+    bottom: -180px;
+    height: 50px;
+    width: 50px;
+    z-index: -1;
+    background-color: black;
+    box-shadow: 0 0 50px rgb(46, 46, 235),
+        0 0 100px rgb(46, 46, 235),
+        0 0 150px rgb(46, 46, 235),
+        0 0 200px rgb(46, 46, 235);
+    animation: animate 10s linear infinite;
+}
+
+.wrapper span:nth-child(1) {
+    left: 60px;
+    animation-delay: 0.6s;
+}
+
+.wrapper span:nth-child(2) {
+    left: 10%;
+    animation-delay: 3s;
+    width: 60px;
+    height: 60px;
+}
+
+.wrapper span:nth-child(3) {
+    left: 20%;
+    animation-delay: 2s;
+
+}
+
+.wrapper span:nth-child(4) {
+    left: 30%;
+    animation-delay: 5s;
+    width: 80px;
+    height: 80px;
+}
+
+.wrapper span:nth-child(5) {
+    left: 40%;
+    animation-delay: 1s;
+
+}
+
+.wrapper span:nth-child(6) {
+    left: 50%;
+    animation-delay: 7s;
+
+}
+
+.wrapper span:nth-child(7) {
+    left: 60%;
+    animation-delay: 6s;
+    width: 100px;
+    height: 100px;
+}
+
+.wrapper span:nth-child(8) {
+    left: 70%;
+    animation-delay: 8s;
+}
+
+.wrapper span:nth-child(9) {
+    left: 80%;
+    animation-delay: 6s;
+    width: 90px;
+    height: 90px;
+}
+
+.wrapper span:nth-child(10) {
+    left: 90%;
+    animation-delay: 4s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.data {
+    padding: 50px;
+    background: #f1ecec;
+    color: #0e0909;
+    margin: 0 auto;
+    margin-top: 25vh;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: tahoma;
+    flex-direction: column;
+    color: rgb(250, 245, 245);
+    margin: 5px 15px;
+}
+
+h2 {
+    height: 50px;
+    margin-top: 10px;
+}
+
+
+.input-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.input-row input,
+.btn-row input {
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #0a0808;
+    outline: none;
+    position: relative;
+}
+
+.input-row div label {
+    font-size: 17px;
+    display: flex;
+    padding: 5px;
+}
+
+.btn-row input {
+    background-color: rgb(10, 2, 17);
+    border: none;
+    color: rgb(255, 252, 252);
+    font-size: 15px;
+    margin-top: 20px;
+    transition: all 0.5s ease-in;
+}
+
+.btn-row input:hover {
+    background-color: rgb(131, 131, 134);
+}
+
+div:has(input) {
+    position: relative;
+}
+
+.password i.eye {
+    right: 0;
+    top: 50px;
+    position: absolute;
+    margin-right: 10px;
+}
+
+p {
+    margin-top: 15px;
+}
