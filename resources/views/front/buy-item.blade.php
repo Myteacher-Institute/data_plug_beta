@@ -7,12 +7,7 @@
       <div class="toggle">
           <i class="fa fa-navicon"></i>
       </div>
-      {{-- div class="search">
-          <label class="label">
-              <input type="text" placeholder="search here" id="search">
-              <i class="fa fa-search"></i>
-          </label>
-      </> --}}
+
 
           <div class="user-img">
 
