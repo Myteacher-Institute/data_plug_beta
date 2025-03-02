@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\EnterResult;
 use App\Models\Help;
 use App\Models\NINServices;
 use App\Models\NINServicesRequest;
@@ -10,7 +11,6 @@ use App\Models\Settings;
 use App\Models\Transactions;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 // use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -42,76 +42,6 @@ class AdminController extends Controller
         return view('admin.users',
         ['users' => $users]
     );
-    }
-
-    public function services() {
-        $services = NINServices::all();
-        return view('admin.services', ['services' => $services]);
-    }
-
-    public function view_service_requests() {
-        $service_requests = NINServicesRequest::all();
-        return view('admin.service_requests', ['service_requests' => $service_requests]);
-    }
-
-    public function add_service() {
-        return view('admin.add-service');
-    }
-
-    public function store_service(Request $request) {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'details' => 'required',
-            'amount' => 'required'
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()->with('message', 'All Fields Are Required');
-        }
-
-        $nin_service = new NINServices();
-        $nin_service->name = $request->name;
-        $nin_service->slug = Str::slug($request->name);
-        $nin_service->details = $request->details;
-        $nin_service->amount = $request->amount;
-        $nin_service->save();
-
-        return redirect()->back()->with('message', 'Service Added Successfully');
-    }
-    
-    public function edit_service($id) {
-        $service = NINServices::find($id);
-
-        return view('admin.edit-service', ['service' => $service]);
-    }
-
-    public function update_service(Request $request, $id) {
-
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'details' => 'required',
-            'amount' => 'required'
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->back()->with('message', 'All Fields Are Required');
-        }
-
-        $nin_service = NINServices::find($id);
-        $nin_service->name = $request->name;
-        $nin_service->slug = Str::slug($request->name);
-        $nin_service->details = $request->details;
-        $nin_service->amount = $request->amount;
-        $nin_service->update();
-
-        return redirect('admin/services')->with('message', 'Service Updated Successfully');
-    }
-
-    public function delete_service($id) {
-        $service = NINServices::find($id);
-        $service->delete();
-
-        return redirect()->back()->with('message', 'Service Deleted Successfully');
     }
 
     public function profile() {

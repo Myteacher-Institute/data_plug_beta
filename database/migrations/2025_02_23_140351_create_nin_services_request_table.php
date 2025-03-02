@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('tracking_id')->nullable();
             $table->string('dob');
             $table->string('new_dob')->nullable();
+            $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });
     }

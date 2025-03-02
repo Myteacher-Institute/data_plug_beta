@@ -50,7 +50,7 @@
                             <h5>{{ $user->user_id }}</h5>
                             <p>N{{ $user->balance }}</p>
                         </td>
-                        <td class="role">
+                        <td class="role"> 
                             <p>{{ $user->phone }}</p>
                         </td>
                         <td onclick="return confirm('Are you sure to delete this user?')">

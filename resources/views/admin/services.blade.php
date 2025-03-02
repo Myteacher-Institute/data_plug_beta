@@ -61,11 +61,16 @@
                             <form action="{{ url('admin/delete-service/'.$item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" style="cursor: pointer;">Delete</button>
+                                <button type="submit" style="cursor: pointer;" id="delete-btn">Delete</button>
                             </form>
                         </td>
                         <td class="role">
-                            <a href="{{ url('admin/view-service-requests') }}">View Requests</a>
+                            @if ($item->slug == "nin-retrieval")
+                                <a href="{{ url('admin/view-service-requests/nin-retrieval') }}">View Requests</a>
+                            @elseif ($item->slug == "nin-modification")
+                                <a href="{{ url('admin/view-service-requests/nin-modification') }}">View Requests</a>
+                            @endif
+                            
                         </td>
                     </tr>
                     @endforeach

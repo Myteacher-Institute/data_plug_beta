@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\NINController;
 use App\Http\Controllers\Front\PagesController;
 use App\Http\Controllers\VTUController;
 use Illuminate\Support\Facades\Auth;
@@ -66,13 +67,15 @@ Route::get('/bills', [App\Http\Controllers\HomeController::class, 'bills']);
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::get('/index', [AdminController::class, 'index']);
     Route::get('/users', [AdminController::class, 'users']);
-    Route::get('/services', [AdminController::class, 'services']);
-    Route::get('/view-service-requests', [AdminController::class, 'view_service_requests']);
-    Route::get('/add-service', [AdminController::class, 'add_service']);
-    Route::post('/store-service', [AdminController::class, 'store_service']);
-    Route::get('/edit-service/{id}', [AdminController::class, 'edit_service']);
-    Route::put('/edit-service/{id}', [AdminController::class, 'update_service']);
-    Route::delete('/delete-service/{id}', [AdminController::class, 'delete_service']);
+    Route::get('/services', [NINController::class, 'services']);
+    Route::get('/view-service-requests/{slug}', [NINController::class, 'view_service_requests']);
+    Route::get('/view-service-requests/{id}/enter-result', [NINController::class, 'view_service_requests_enter_result']);
+    Route::post('/view-service-requests/enter-result', [NINController::class, 'view_service_requests_store_result']);
+    Route::get('/add-service', [NINController::class, 'add_service']);
+    Route::post('/store-service', [NINController::class, 'store_service']);
+    Route::get('/edit-service/{id}', [NINController::class, 'edit_service']);
+    Route::put('/edit-service/{id}', [NINController::class, 'update_service']);
+    Route::delete('/delete-service/{id}', [NINController::class, 'delete_service']);
     Route::get('/profile', [AdminController::class, 'profile']);
     Route::put('/profile', [AdminController::class, 'update_profile']);
     Route::put('/password', [AdminController::class, 'update_password']);
