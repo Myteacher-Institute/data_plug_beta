@@ -21,11 +21,18 @@
 
         <h3 class="i-name">Services</h3>
 
-        @if (session('message'))
-            <script>
-                alert('{{ session('message') }}');
-            </script>
-        @endif
+    @if (session('error'))
+        <script>
+            // alert('{{ session('error') }}')
+            swal("error!", "{{ session('error') }}", "error");
+        </script>
+    @endif
+    @if (session('message'))
+    <script>
+        // alert('{{ session('error') }}')
+        swal("successful!", "{{ session('message') }}", "success");
+    </script>
+    @endif
 
         <div class="board">
             <h5 style="padding: 10px">NIN Services</h5>

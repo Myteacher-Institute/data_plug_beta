@@ -43,7 +43,7 @@ class NINController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('message', 'Fill In All Required Fields');
+            return redirect()->back()->with('info', 'Fill In All Required Fields');
         }
         
 
@@ -69,7 +69,7 @@ class NINController extends Controller
             return redirect()->back()->with('message', 'Request Sent Successfully.\nCheck Your Dashboard In 24 Hours');
         }
         else {
-            return redirect()->back()->with('message', 'Insufficient Balance');
+            return redirect()->back()->with('error', 'Insufficient Balance');
         }
     }
 
@@ -86,7 +86,7 @@ class NINController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('message', 'Fill In All Required Fields');
+            return redirect()->back()->with('info', 'Fill In All Required Fields');
         }
         
 
@@ -116,7 +116,7 @@ class NINController extends Controller
             return redirect('/services')->with('message', 'Request Sent Successfully.\nCheck Your Dashboard In 24 Hours');
         }
         else {
-            return redirect()->back()->with('message', 'Insufficient Balance');
+            return redirect()->back()->with('error', 'Insufficient Balance');
         }
     }
 }

@@ -22,6 +22,7 @@
 
      <!-- Scripts -->
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
      @vite(['resources/js/app.js'])
 </head>
@@ -40,6 +41,7 @@
     <!-- <script src="pre-loader.js"></script> -->
      {{-- <script src="profile.js"></script> --}}
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>   
 
 
 

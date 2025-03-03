@@ -38,7 +38,8 @@
           <div>
             @if (session('message'))
                 <script>
-                    alert('{{ session('message') }}');
+                    // alert('{{ session('message') }}');
+                    swal("NIN MESSAGE", "{{ session('message') }}", "success");
                 </script>
               @endif
             <div class="home">

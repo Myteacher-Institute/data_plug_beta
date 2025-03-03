@@ -52,7 +52,7 @@ class HomeController extends Controller
         $status = $request->input('status');
 
         if ($status == "cancelled") {
-            return redirect('home')->with('message', 'Payment Cancelled');
+            return redirect('home')->with('error', 'Payment Cancelled');
         }
         else if ($status == "successful") {
             $tx_id = $request->input("transaction_id");
@@ -100,7 +100,7 @@ class HomeController extends Controller
                 return redirect('home')->with('message', 'Payment Successfull');
             } 
             else {
-                return redirect('home')->with('message', 'Payment Not Processed');
+                return redirect('home')->with('error', 'Payment Not Processed');
             }
 
         }
@@ -205,7 +205,7 @@ class HomeController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('error', 'Error With Updating User Password');
+            return redirect()->back()->with('error', 'Error Updating User Password');
         }
 
         $current_password = Hash::check($request->current_password, Auth::user()->password);
@@ -217,7 +217,7 @@ class HomeController extends Controller
             return redirect()->back()->with('message', 'Password Updated Successfully');
         }
         else {
-            return redirect()->back()->with('message', 'Current Password Incorrect');
+            return redirect()->back()->with('error', 'Current Password Incorrect');
         }
     }
 
@@ -245,6 +245,11 @@ class HomeController extends Controller
     }
     public function bills(){
         return view('front.bills');
+    }
+
+    // this is the testimony function i know this is sounds leme buth it worth trying
+    public function testimony(){
+        return view('front.testify');
     }
 
 

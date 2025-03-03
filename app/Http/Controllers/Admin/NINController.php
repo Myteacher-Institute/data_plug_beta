@@ -40,7 +40,7 @@ class NINController extends Controller
                 'file' => 'required|mimes:jpeg,png,jpg,gif,pdf,doc,docx|max:2048'
             ]);
             if ($validator->fails()) {
-                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
+                return redirect()->back()->with('error', 'Upload File Or Add PDF Link');
             }
         }
         elseif (!($request->hasfile('file'))) {
@@ -49,7 +49,7 @@ class NINController extends Controller
             ]);
 
             if ($validator->fails()) {
-                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
+                return redirect()->back()->with('error', 'Upload File Or Add PDF Link');
             }
         }
 
@@ -81,7 +81,7 @@ class NINController extends Controller
                 'file' => 'required|mimes:jpeg,png,jpg,gif,pdf,doc,docx|max:2048'
             ]);
             if ($validator->fails()) {
-                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
+                return redirect()->back()->with('error', 'Upload File Or Add PDF Link');
             }
         }
         elseif (!($request->hasfile('file'))) {
@@ -90,7 +90,7 @@ class NINController extends Controller
             ]);
 
             if ($validator->fails()) {
-                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
+                return redirect()->back()->with('error', 'Upload File Or Add PDF Link');
             }
         }
 
@@ -156,7 +156,7 @@ class NINController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('message', 'All Fields Are Required');
+            return redirect()->back()->with('error', 'All Fields Are Required');
         }
 
         $nin_service = NINServices::find($id);

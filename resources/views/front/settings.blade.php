@@ -39,12 +39,14 @@
 
             @if (session('error'))
                 <script>
-                    alert('{{ session('error') }}')
+                    // alert('{{ session('error') }}')
+                    swal("error!", "{{ session('error') }}", "error");
                 </script>
             @endif
             @if (session('message'))
                 <script>
-                    alert('{{ session('message') }}')
+                    // alert('{{ session('message') }}')
+                    swal("successful!", "{{ session('message') }}", "success");
                 </script>
             @endif
             

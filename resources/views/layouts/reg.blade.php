@@ -23,7 +23,7 @@
 <!-- Scripts -->
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>z
+<body>
     @yield('section')
 
     <script src="{{ asset('assset/js/jquery.min.js') }}"></script>

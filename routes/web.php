@@ -27,7 +27,7 @@ Route::get('/test', [PagesController::class, 'test']);
 Auth::routes();
 
 // User Routes
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']);
 Route::get('/transactions', [App\Http\Controllers\HomeController::class, 'transactions']);
 Route::get('/view_transaction_table', [App\Http\Controllers\HomeController::class, 'view_transaction_table']);
@@ -61,7 +61,10 @@ Route::get('/mobile_data', [App\Http\Controllers\HomeController::class, 'mobile_
 Route::get('/sme', [App\Http\Controllers\HomeController::class, 'sme']);
 Route::get('/electricity', [App\Http\Controllers\HomeController::class, 'electricity']);
 Route::get('/bills', [App\Http\Controllers\HomeController::class, 'bills']);
-  
+
+// testimony route
+Route::get('/testify', [App\Http\Controllers\HomeController::class, 'testimony'])->name('testify');
+Route::post('/add_testify', [App\Http\Controllers\TestifyController::class,'saveTestimonial'])->name('add_testify');
 
 // Admin Routes
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {

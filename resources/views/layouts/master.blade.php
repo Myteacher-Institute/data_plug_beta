@@ -22,5 +22,6 @@
 
     <script src="{{ asset('admin/js/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/js/script.js') }}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

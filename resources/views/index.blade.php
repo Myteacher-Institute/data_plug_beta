@@ -94,6 +94,8 @@
         </div>
     </div>
 
+    <div id="responseMessage"></div>
+
 @include('includes.testimony')
 @include('includes.contact')
 @endsection
