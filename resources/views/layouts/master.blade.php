@@ -7,7 +7,7 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="{{ asset('admin/css/styles.css') }}">
 
-     
+      
 </head>
 <body>
     <div id="app">

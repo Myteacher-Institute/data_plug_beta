@@ -2,24 +2,28 @@
 
 @section('content')
     
-    <section id="interface">
-        <div class="navigation">
-            <div class="n1">
-                <div>
-                    <img src="icons/bars.svg" id="menu-btn" alt="" class="icons">
-                </div>
-                <div class="search">
-                    <img src="icons/search.svg" alt="" class="icons">
-                    <input type="text" placeholder="Search">
-                </div>
+<section id="interface">
+    <div class="navigation">
+        <div class="n1">
+            <div>
+                <img src="{{ asset('admin/icons/bars.svg') }}" id="menu-btn" alt="" class="icons">
             </div>
-            <div class="profile">
-                <img src="icons/bell.svg" alt="" class="icons">
-                <img src="img/person-1.jpg" alt="" class="profile-pic">
+            <div class="search">
+                <img src="{{ asset('admin/icons/search.svg') }}" alt="" class="icons">
+                <input type="text" placeholder="Search">
             </div>
         </div>
+        <div class="profile">
+            <img src="{{ asset('admin/icons/bell.svg') }}" alt="" class="icons">
+            <img src="{{ asset('admin/img/person-1.jpg') }}" alt="" class="profile-pic">
+        </div>
+    </div>
 
         <h3 class="i-name">Service Request</h3>
+
+        @if (count($service_requests) > 0)
+        <p style="margin-left: 30px;"><a href="{{ url('admin/view-service-request-history/'.$service_requests[0]->service_type) }}">View History</a></p>
+        @endif
 
         <div class="board">
             <table width="100%">

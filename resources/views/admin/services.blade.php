@@ -2,22 +2,22 @@
 
 @section('content')
     
-    <section id="interface">
-        <div class="navigation">
-            <div class="n1">
-                <div>
-                    <img src="icons/bars.svg" id="menu-btn" alt="" class="icons">
-                </div>
-                <div class="search">
-                    <img src="icons/search.svg" alt="" class="icons">
-                    <input type="text" placeholder="Search">
-                </div>
+<section id="interface">
+    <div class="navigation">
+        <div class="n1">
+            <div>
+                <img src="{{ asset('admin/icons/bars.svg') }}" id="menu-btn" alt="" class="icons">
             </div>
-            <div class="profile">
-                <img src="icons/bell.svg" alt="" class="icons">
-                <img src="img/person-1.jpg" alt="" class="profile-pic">
+            <div class="search">
+                <img src="{{ asset('admin/icons/search.svg') }}" alt="" class="icons">
+                <input type="text" placeholder="Search">
             </div>
         </div>
+        <div class="profile">
+            <img src="{{ asset('admin/icons/bell.svg') }}" alt="" class="icons">
+            <img src="{{ asset('admin/img/person-1.jpg') }}" alt="" class="profile-pic">
+        </div>
+    </div>
 
         <h3 class="i-name">Services</h3>
 

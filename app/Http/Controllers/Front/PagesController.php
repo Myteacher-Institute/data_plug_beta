@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Settings;
 // use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function index() {
-        return view("index"); 
+        $settings = Settings::find(1);
+        return view("index", ['settings' => $settings]); 
     }
 
     public function about()

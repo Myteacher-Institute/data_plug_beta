@@ -69,8 +69,10 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::get('/users', [AdminController::class, 'users']);
     Route::get('/services', [NINController::class, 'services']);
     Route::get('/view-service-requests/{slug}', [NINController::class, 'view_service_requests']);
+    Route::get('/view-service-request-history/{slug}', [NINController::class, 'view_service_request_history']);
     Route::get('/view-service-requests/{id}/enter-result', [NINController::class, 'view_service_requests_enter_result']);
     Route::post('/view-service-requests/enter-result', [NINController::class, 'view_service_requests_store_result']);
+    Route::post('/view-service-requests/update-result', [NINController::class, 'view_service_requests_update_result']);
     Route::get('/add-service', [NINController::class, 'add_service']);
     Route::post('/store-service', [NINController::class, 'store_service']);
     Route::get('/edit-service/{id}', [NINController::class, 'edit_service']);

@@ -20,8 +20,13 @@ class NINController extends Controller
     }
 
     public function view_service_requests($slug) {
-        $service_requests = NINServicesRequest::where('service_type', $slug)->orderBy('id','DESC')->get();
+        $service_requests = NINServicesRequest::where('service_type', $slug)->where('status',0)->orderBy('id','DESC')->get();
         return view('admin.service_requests', ['service_requests' => $service_requests]);
+    }
+
+    public function view_service_request_history($slug) {
+        $service_requests = NINServicesRequest::where('service_type', $slug)->where('status',1)->orderBy('id','DESC')->get();
+        return view('admin.service_request_history', ['service_requests' => $service_requests]);
     }
 
     public function view_service_requests_enter_result($id) {
@@ -68,6 +73,47 @@ class NINController extends Controller
         $nin_service_request->update();
 
         return redirect()->back()->with('message', 'Request Result Added Successfully');
+    }
+
+    public function view_service_requests_update_result(Request $request) {
+        if (!($request->filled('link'))) {
+            $validator = Validator::make($request->all(), [
+                'file' => 'required|mimes:jpeg,png,jpg,gif,pdf,doc,docx|max:2048'
+            ]);
+            if ($validator->fails()) {
+                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
+            }
+        }
+        elseif (!($request->hasfile('file'))) {
+            $validator = Validator::make($request->all(), [
+                'link' => 'required|string|max:255'
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
+            }
+        }
+
+        $enter_result = new EnterResult;
+        $enter_result->user_id = Auth::user()->user_id;
+        $enter_result->link = $request->link;
+        $enter_result->notes = $request->notes;
+        $enter_result->request_id = $request->request_id;
+
+        if ($request->hasfile('file')) {
+            $file = $request->file('file');
+            $filename = uniqid() .'.'. $file->getClientOriginalExtension();
+            $file->move('uploads/', $filename);
+            $enter_result->file = $filename;
+        }
+
+        $enter_result->update();
+
+        $nin_service_request = NINServicesRequest::find($request->request_id)->first();
+        $nin_service_request->status = 1;
+        $nin_service_request->update();
+
+        return redirect()->back();
     }
 
     public function add_service() {

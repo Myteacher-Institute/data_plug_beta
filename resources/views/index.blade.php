@@ -1,14 +1,19 @@
 @extends('layouts.app')
 
 
-
 @section('content')
 <div class="hero">
 
     <div class="content">
         <h1 class="arc">Buy<br>Data</h1>
-        <p class="arc">Dataplugone is a new social media platform that make it easy to buy data at affordable price
-        in any part of the World. Now let's explore all it's amazing features.</p>
+        @if ($settings)
+            <p class="arc">{{ $settings->website_title }} is a new media platform that make it easy to buy data at affordable price
+            in any part of the World. Now let's explore all it's amazing features.</p>
+        @else
+            <p class="arc"> is a new media platform that make it easy to buy data at affordable price
+            in any part of the World. Now let's explore all it's amazing features.</p>
+        @endif
+        
         @if (Auth::check())
         <a href={{ url('home') }} class="btn arc">Dashboard</a>
         @else
