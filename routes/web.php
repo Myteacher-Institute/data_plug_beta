@@ -45,6 +45,9 @@ Route::get('/nin-services', [App\Http\Controllers\NINController::class, 'nin_ser
 Route::get('/display-value', [App\Http\Controllers\NINController::class, 'display_value']);
 Route::post('/nin-retrieval', [App\Http\Controllers\NINController::class, 'nin_retrieval']);
 Route::post('/nin-modification', [App\Http\Controllers\NINController::class, 'nin_modification']);
+Route::get('/update-request/{id}', [App\Http\Controllers\NINController::class, 'update_request']);
+Route::put('/store-update-request', [App\Http\Controllers\NINController::class, 'store_update_request']);
+Route::get('/check-result/{id}', [App\Http\Controllers\NINController::class, 'check_result']);
 
 
 // Payment Routes
@@ -70,9 +73,10 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::get('/services', [NINController::class, 'services']);
     Route::get('/view-service-requests/{slug}', [NINController::class, 'view_service_requests']);
     Route::get('/view-service-request-history/{slug}', [NINController::class, 'view_service_request_history']);
+    Route::get('/view-all-service-request-history', [NINController::class, 'view_all_service_request_history']);
     Route::get('/view-service-requests/{id}/enter-result', [NINController::class, 'view_service_requests_enter_result']);
     Route::post('/view-service-requests/enter-result', [NINController::class, 'view_service_requests_store_result']);
-    Route::post('/view-service-requests/update-result', [NINController::class, 'view_service_requests_update_result']);
+    Route::put('/view-service-requests/update-result', [NINController::class, 'view_service_requests_update_result']);
     Route::get('/add-service', [NINController::class, 'add_service']);
     Route::post('/store-service', [NINController::class, 'store_service']);
     Route::get('/edit-service/{id}', [NINController::class, 'edit_service']);

@@ -79,14 +79,15 @@
                                     $result = App\Models\EnterResult::where('request_id',$item->id)->first();
                                 @endphp
                                 <!-- Modal content -->
-                                <form action="">
+                                <form action=""> 
                                     <div class="modal-content">
                                         <span id="close" class="close">&times;</span>
                                         <div class="values">
                                             <form action="{{ url('admin/view-service-requests/update-result') }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
+                                                @method('PUT')
                                 
-                                                <input type="hidden" name="request_id" value="{{ $item->id }}">
+                                                <input type="text" name="id" value="{{ $result->id }}">
                                 
                                                 <div class="form">
                                                     <div class="input-container ic1" style="margin-bottom: 50px">
@@ -99,8 +100,8 @@
                                                     </div>
                                                     <div class="input-container ic2" style="margin-bottom: 50px">
                                                         <div class="input-container ic2" style="margin-bottom: 30px">
-                                                        <textarea id="details" name="details" class="input" cols="40" rows="25"></textarea>
-                                                        <label for="details" >Notes <i>(if any)</i></>
+                                                        <textarea id="notes" name="notes" class="input" cols="40" rows="25"></textarea>
+                                                        <label for="notes" >Notes <i>(if any)</i></>
                                                     </div>
                                                     <button type="submit" class="submit">Update</button>
                                                 </div>
@@ -131,7 +132,7 @@
                                   </div><br>
 
                                   <div>
-                                    PDF Link: {{ $result->link == "" ? "Empty" : $result->link }}
+                                    PDF Link: {{ $result->link  }}
                                   </div><br>
 
                                   <div>

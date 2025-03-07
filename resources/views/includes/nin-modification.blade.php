@@ -26,7 +26,7 @@
                 <input type="text" id="nin" name="lastname" placeholder="Enter your NIN lastname"><br>
                 <input type="text" id="nin" name="new_lastname" placeholder="Enter your new lastname">
             </div>
-
+ 
             <div class="nin-rt-form-group">
                 <input type="date" id="nin" name="dob" placeholder="Enter your date of birth"> <i>(Enter DOB)</i><br>
                 <input type="date" id="nin" name="new_dob" placeholder="Enter your new date of birth"> <i>(Enter New DOB)</i>

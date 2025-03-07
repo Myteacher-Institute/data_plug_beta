@@ -21,6 +21,8 @@
 
         <h3 class="i-name">Service Request</h3>
 
+        <p style="margin-left: 30px;"><a href="{{ url('admin/view-all-service-request-history/') }}">View History </a></p>
+
         @if (count($service_requests) > 0)
         <p style="margin-left: 30px;"><a href="{{ url('admin/view-service-request-history/'.$service_requests[0]->service_type) }}">View History</a></p>
         @endif
@@ -76,7 +78,7 @@
                     @empty
                     <h3 style="color: red; text-align: center;">No Request Available</h3>  
                     @endforelse
-                
+            
                 </tbody>
             </table>
         </div>

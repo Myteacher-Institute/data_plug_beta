@@ -29,6 +29,11 @@ class NINController extends Controller
         return view('admin.service_request_history', ['service_requests' => $service_requests]);
     }
 
+    public function view_all_service_request_history() {
+        $service_requests = NINServicesRequest::where('status',1)->orderBy('id','DESC')->get();
+        return view('admin.service_request_history', ['service_requests' => $service_requests]);
+    }
+
     public function view_service_requests_enter_result($id) {
         $service_request = NINServicesRequest::find($id);
         return view('admin.enter_service_result', ['service_request' => $service_request]);
@@ -68,7 +73,7 @@ class NINController extends Controller
 
         $enter_result->save();
 
-        $nin_service_request = NINServicesRequest::find($request->request_id)->first();
+        $nin_service_request = NINServicesRequest::where('id',$request->request_id)->first();
         $nin_service_request->status = 1;
         $nin_service_request->update();
 
@@ -94,24 +99,18 @@ class NINController extends Controller
             }
         }
 
-        $enter_result = new EnterResult;
-        $enter_result->user_id = Auth::user()->user_id;
-        $enter_result->link = $request->link;
-        $enter_result->notes = $request->notes;
-        $enter_result->request_id = $request->request_id;
+        $update_result = EnterResult::find($request->id);
+        $update_result->link = $request->link;
+        $update_result->notes = $request->notes;
 
         if ($request->hasfile('file')) {
             $file = $request->file('file');
             $filename = uniqid() .'.'. $file->getClientOriginalExtension();
             $file->move('uploads/', $filename);
-            $enter_result->file = $filename;
+            $update_result->file = $filename;
         }
 
-        $enter_result->update();
-
-        $nin_service_request = NINServicesRequest::find($request->request_id)->first();
-        $nin_service_request->status = 1;
-        $nin_service_request->update();
+        $update_result->update();
 
         return redirect()->back();
     }

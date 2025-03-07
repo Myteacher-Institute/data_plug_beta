@@ -80,8 +80,8 @@
                     </tr>
                     <tr style="margin-bottom: 50px">
                         <td></td>
-                        <td><button style="background-color: blue; color: white; padding: 5px;">Update</button></td>
-                        <td><button style="background-color: green; color: white; padding: 5px;">Check Result</button></td>
+                        <td><button style="background-color: blue; color: white; padding: 5px;"><a href="{{ url('update-request/'.$item->id) }}" style="color: white; text-decoration: none;">Update</a></button></td>
+                        <td><button style="background-color: green; color: white; padding: 5px;"><a href="{{ url('check-result/'.$item->id) }}" style="color: white; text-decoration: none;">Check Result</a></button></td>
                     </tr>
                     @endforeach
                 </tbody>

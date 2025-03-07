@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EnterResult;
 use App\Models\NINServices;
 use App\Models\NINServicesRequest;
 use Illuminate\Http\Request;
@@ -118,5 +119,21 @@ class NINController extends Controller
         else {
             return redirect()->back()->with('message', 'Insufficient Balance');
         }
+    }
+
+    public function update_request($id) {
+        $result = EnterResult::where('request_id',$id)->first();
+
+        return view('front.update_request', ['result' => $result]);
+    }
+
+    public function store_update_request() {
+
+    }
+
+    public function check_result($id) {
+        $result = EnterResult::where('request_id',$id)->first();
+        
+        return view('front.check_result', ['result' => $result]);
     }
 }

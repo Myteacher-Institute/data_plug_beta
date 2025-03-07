@@ -26,6 +26,8 @@
         </script>
         @endif
 
+        <p style="margin-left: 30px;"><a href="{{ url('admin/services') }}">Back</a></p>
+
         <div class="values">
             <form action="{{ url('admin/view-service-requests/enter-result') }}" method="POST" enctype="multipart/form-data">
                 @csrf
