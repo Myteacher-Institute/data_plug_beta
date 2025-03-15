@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Settings;
 use App\Models\Payments;
 use App\Models\Transactions;
+use App\Models\Testify;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -249,7 +250,10 @@ class HomeController extends Controller
 
     // this is the testimony function i know this is sounds leme buth it worth trying
     public function testimony(){
-        return view('front.testify');
+        $benefits = Testify::orderBy('content', 'desc')->get();
+        return view('front.testify', [
+           'benefits' => $benefits
+        ]);
     }
 
 

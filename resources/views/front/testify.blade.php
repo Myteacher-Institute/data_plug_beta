@@ -2,6 +2,17 @@
 
 @section('content')
     <!-- ==========================main================================= -->
+    <style>
+        #dataForm{
+            margin: 60px 30px;
+        }
+        .tes-content > textarea{
+            width: 60%;
+            height: 200px;
+            padding: 30px;
+            font-size: 2em
+        }
+    </style>
 <div class="main">
     <div class="topbar">
       <div class="toggle">
@@ -35,17 +46,20 @@
               <label for="file" id="uploadbtn"><i class="fas fa-camera"></i></label> --}}
           </div>
       </div> 
-          
-    <form id="dataForm" method="post" action="/add_testify">  
-        @csrf  
-        <input type="text" name="content" placeholder="Name" required>  
-        <button type="submit">Submit</button>  
-    </form>
+      @if (session('success'))
+      <script>
+          alert('{{ session('success') }}')
+      </script>
+      @endif
+      @if (session('error'))
+      <script>
+          alert('{{ session('error') }}')
+      </script>
+      @endif
 
-    <div id="responseMessage"></div> <!-- Display response messages -->
   </div>
 
-  <script>
+  {{-- <script>
 $(document).ready(function() {
         $('#dataForm').on('submit', function(e) {
             e.preventDefault(); // Prevent form from submitting normally
@@ -73,5 +87,5 @@ $(document).ready(function() {
             });
         });
     });
-  </script>
+  </script> --}}
 @endsection
