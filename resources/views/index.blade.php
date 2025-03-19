@@ -5,13 +5,11 @@
 <div class="hero">
 
     <div class="content">
-        <h1 class="arc">Buy<br>Data</h1>
+        <h1 class="arc">Id<br>Service</h1>
         @if ($settings)
-            <p class="arc">{{ $settings->website_title }} is a new media platform that make it easy to buy data at affordable price
-            in any part of the World. Now let's explore all it's amazing features.</p>
+            <p class="arc">{{ $settings->website_title }} Your comprehensive Identity Management platform provides essential support in addressing National Identification Number (NIN) issues, as well as creating personalized company ID cards for staff, school ID cards for students, and offering robust identity management solutions tailored for organizations of all sizes</p>
         @else
-            <p class="arc"> is a new media platform that make it easy to buy data at affordable price
-            in any part of the World. Now let's explore all it's amazing features.</p>
+        <p class="arc"> Your comprehensive Identity Management platform provides essential support in addressing National Identification Number (NIN) issues, as well as creating personalized company ID cards for staff, school ID cards for students, and offering robust identity management solutions tailored for organizations of all sizes</p>
         @endif
         
         @if (Auth::check())
@@ -20,35 +18,69 @@
         <a href={{ url('register') }} class="btn arc">Join now</a>
         @endif
     </div>
-    <img src={{ asset('images/data.png.jpg') }} class="features-img arc">
+    <img src={{ asset('assset/img/id_card_logo.png') }} class="features-img arc">
 
     <marquee>
-        <img src="{{ asset('images/ait.png') }}" alt="" style="margin-left: 20px">
-        <img src="{{ asset('images/download (7).png') }}" alt="" style="margin-left: 20px">
-        <img src="{{ asset('images/nine.png') }}" alt="" style="margin-left: 20px">
-        <img src="{{ asset('images/glo.jpg') }}" alt="" style="margin-left: 20px">
+        <img src="{{ asset('assset/img/1_whatIsTheNIN.png') }}" alt="" style="margin-left: 20px">
+        <img src="{{ asset('assset/img/2_NINidentifies.png') }}" alt="" style="margin-left: 20px">
+        <img src="{{ asset('assset/img/3_uniqueNIN-600x377.png') }}" alt="" style="margin-left: 20px;height: 475px">
+        <img src="{{ asset('assset/img/5_NINSlip.png') }}" alt="" style="margin-left: 20px">
     </marquee>
 </div>
 <div class="services">
     <h1 class="our-services">Our Services</h1>
     <div class="services-box">
         <div class="service-box1">
-            <h2 class="services-head-text">{{ __('Fund your Account, make Transfers, Pay Bills') }}</h2>
+            <h2 class="services-head-text">{{ __('Nin Service') }}</h2>
 
             <p class="services-text">
                 {{ __('
-                Live life on your own terms! Add money to your
-                DataPlug Wallet and transfer to other bank accounts for
-                free Enjoy bonuses on airtime & data top Ups and fast bill payments at the
-                extra charge') }}
+                    This is a dedicated service for all matters related to NIN issues, including enrollment and validation processes. For any inquiries or assistance, please feel free to reach out to our service team, who are always ready to help you') }}
             </p>
         </div>
         <img
             src="
                 {{
-                    asset('images/stock-vector-e-store-and-e-commerce-website-for-shopping-online-flat-line-vector-illustration-of-cute-woman-1855045951.jpg') }}" alt="" class="service-box2">
+                    asset('assset/img/logoLarge.png') }}" alt="" class="service-box2">
     </div>
 </div>
+
+<div class="services">
+    <h1 class="our-services">Our Services</h1>
+    <div class="services-box">
+        <div class="service-box1">
+            <h2 class="services-head-text">{{ __('Convert your NIN to a plastic ID Card') }}</h2>
+
+            <p class="services-text">
+                {{ __('
+                    You have the opportunity to receive a sturdy plastic ID Card that will be delivered straight to you. Take the step to upgrade to a plastic ID Card today and experience the advantages of this service') }}
+            </p>
+        </div>
+        <img
+            src="
+                {{
+                    asset('assset/img/NIMC-NIN-card.jpeg') }}" alt="" class="service-box2">
+    </div>
+</div>
+
+<div class="services">
+    <h1 class="our-services">Our Services</h1>
+    <div class="services-box">
+        <div class="service-box1">
+            <h2 class="services-head-text">{{ __('Convert your NIN to a plastic ID Card') }}</h2>
+
+            <p class="services-text">
+                {{ __("
+                    Let's take the initiative to create Identity Cards for your staff, students, and members. Having a proper identity is crucial in many situations. It not only helps to establish recognition but also enhances security and trust within your community. If you're interested in getting started, feel free to chat with us now to request our quick and efficient service. Your identity matters, and we're here to assist you every step of the way") }}
+            </p>
+        </div>
+        <img
+            src="
+                {{
+                    asset('assset/img/pngtree-id-card-template-png-image_4995288.jpg') }}" alt="" class="service-box2">
+    </div>
+</div>
+
 
 <div class="services">
     <h1 class="our-services" style="text-align: center;">About Us</h1>
@@ -58,8 +90,7 @@
 
             <p class="services-text">
                 {{ __('
-                we as dataPlug don"t just give you a Realiable Banking activity 
-                both also give your account serve banking') }}
+                    We at DataPlug don’t just provide you with reliable information on activities; we also offer personalized ID cards, whether for educational institutions or businesses') }}
             </p>
         </div>
         <img
