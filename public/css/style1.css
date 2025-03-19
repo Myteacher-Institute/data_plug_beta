@@ -88,10 +88,12 @@ nav ul li a:hover:after{
 .content .btn{
     padding: 15px 80px;
     font-size: 16px;
+    transition: all 0.6s ease-in-out 0s;
 }
 .content .btn:hover{
     transform: scale(1.1);
     color: rgb(17, 17, 100) !important;
+    border: 1px solid rgb(17, 17, 100);
     background: #fff;
 }
 .btn:hover{
@@ -145,6 +147,13 @@ nav .fa-bars{
 .phone-sec > i:hover{
     transform: scale(1.2);
 }
+.nav-system ul .user-dropdown > a{
+    font-size: 1rem;
+}
+.nav-system ul .user-dropdown > a:focus{
+    font-size: 1.2rem;
+    text-decoration: none;
+}
  @keyframes moveup{
     100%{
         opacity: 1;
@@ -152,7 +161,7 @@ nav .fa-bars{
     }
  }
 
- @media (max-width: 768px){
+ @media (orientation: portrait){
     nav ul{
         flex-direction: column;
         gap: 20px;
@@ -163,11 +172,11 @@ nav .fa-bars{
         align-items: center;
         position: absolute;
         top: 60px;
-        left: 210px;
+        left: 20px;
         line-height: 60px;
         z-index: 10;
         padding: 50px;
-        border-radius: 20px;
+        width: 100%;
     }
     nav ul li a{
         font-size: 1.2rem;
@@ -196,12 +205,12 @@ nav .fa-bars{
     align-items: center;
 }
 nav{
-    display: flex;
-    gap: 80px;
+    display: inline-flex;
+    gap: 50px;
 }
  }
 
- @media (max-width: 400px) {
+ /* @media (max-width: 400px) {
     nav{
         display: inline-flex;
         gap: 30px;
@@ -254,4 +263,4 @@ nav{
         display: inline-flex;
         gap: 30px;
     }
- }
+ } */

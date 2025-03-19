@@ -85,22 +85,22 @@
                     </select>
                 </div>
             </div>
-            <div class="sup-item">
+            {{-- <div class="sup-item">
                 <img src="assset/img/download (1).png" alt="">
                 <h3 class="h3">Buy Data</h3> 
                 <p class="sup-details">Purchase your data plans at the cheapest rates...</p>
                 <div class="use-btn">
                     <a href="{{ url('buy_item/data') }}" class="amount-btn">Continue</a>
                 </div>
-            </div>
-            <div class="sup-item">
+            </div> --}}
+            {{-- <div class="sup-item">
                 <img src="assset/img/download (1).png" alt="">
                 <h3 class="h3">Buy Airtime</h3> 
                 <p class="sup-details">Purchase your airtime fast and convenient...</p>
                 <div class="use-btn">
                     <a href="{{ url('buy_item/airtime') }}" class="amount-btn">Continue</a>
                 </div>
-            </div>
+            </div> --}}
 
             {{-- this path is for testimony section take note --}}
             @php

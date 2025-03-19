@@ -12,8 +12,8 @@
     <div class="nav-system">
         @if (Auth::check())
         <ul class="navbar-nav ms-auto">
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" style="font-size: 0.6rem;font-weight:900;" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <li class="nav-item dropdown user-dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" style="font-weight:900;" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}
                 </a>
 
