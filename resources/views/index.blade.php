@@ -4,6 +4,7 @@
 @section('content')
 <div class="hero">
 
+    
     <div class="content">
         <h1 class="arc">Buy<br>Data</h1>
         @if ($settings)
