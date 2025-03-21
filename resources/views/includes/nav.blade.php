@@ -40,7 +40,6 @@
         </ul>
         @else
         <div class="reg" onclick="regShow()">
-            <i class="fa-solid fa-arrow-down-short-wide"></i>
             Register
         </div>
         <div class="reg-btn">
