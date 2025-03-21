@@ -3,21 +3,22 @@
         <div class="footer-box">
             <ul class="ul-list">
                 <li class="footer-list"><a href="" class="footer-link">About</a></li>
-                <li class="footer-list"><a href="" class="footer-link">Contact us</a></li>
-                <li class="footer-list"><a href="" class="footer-link">Report an issue</a></li>
+                @if (Auth::check())
+                    <li class="footer-list"><a href="" class="footer-link">Report an issue</a></li>
+                @endIf
             </ul>
         </div>
         <div class="footer-box">
             <ul class="ul-list">
-                <li class="footer-list"><a href="" class="footer-link active">DataPlug Office</a></li>
+                <li class="footer-list"><a href="" class="footer-link active">Offices</a></li>
                 <li class="footer-list"><a href="" class="footer-link">Myteacher institute</a></li>
             </ul>
         </div>
         <div class="footer-box">
             <ul class="ul-list">
-                <li class="footer-list"><a href="" class="footer-link active">Contact Us</a></li>
+                <li class="footer-list"><a href="#gi" class="footer-link active">Contact Us</a></li>
                 <li class="footer-list"><a href="" class="footer-link">Whatsapp</a></li>
-                <li class="footer-list"><a href="" class="footer-link">call Us with this Number: +2348167656064</a></li>
+                <li class="footer-list"><a href="" class="footer-link" id="gi">call Us with this Number: +2348167656064</a></li>
             </ul>
         </div>
         <div class="footer-box">

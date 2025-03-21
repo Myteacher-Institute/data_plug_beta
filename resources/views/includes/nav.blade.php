@@ -1,13 +1,9 @@
 <nav>
     <a href="{{ url('/') }}" class="a"><img @if ($settings) src={{  asset('uploads/'.$settings->logo) }}@endif class="logo"></a>
     <ul class="ul">
-        <li class="li"><a href="{{ url('/features') }}" class="a">Features</a></li>
+        <li class="li"><a href="{{ url('/') }}" class="a">Home</a></li>
         <li class="li"><a href="{{ url('/how') }}" class="a">How it works</a></li>
-        @if (Auth::check() === url('/about'))
-        <li class="li"><a href="#" class="a">Content</a></li>
-        @else
         <li class="li"><a href="{{ url('/about') }}" class="a">About</a></li>
-        @endif
     </ul>
     <div class="nav-system">
         @if (Auth::check())
@@ -42,7 +38,7 @@
         <div class="reg" onclick="regShow()">
             Register
         </div>
-        <div class="reg-btn">
+        <div class="reg-btn" style="backgroud: #fff;z-index: 100;box-shadow: 0 0 5px #ccc">
             <a href={{ url('/login') }} class="login-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log in</a>
             <a href={{ url('/register') }} class="btn">Register</a>
         </div>

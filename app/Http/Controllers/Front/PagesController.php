@@ -22,12 +22,12 @@ class PagesController extends Controller
     {
         return view('front.how_it_work');
     }
-    public function features()
-    {
-        return view('front.features');
-    }
-    public function test()
-    {
-        return view('front.test');
-    }
+    // public function features()
+    // {
+    //     return view('front.features');
+    // }
+    // public function test()
+    // {
+    //     return view('front.test');
+    // }
 }

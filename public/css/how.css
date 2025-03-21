@@ -151,34 +151,6 @@ body{
     margin: 20px 0;
 }
 
-@media (max-width: 400px) {
-    .how-head{
-        font-size: 0.7rem;
-        font-stretch: wider;
-        margin-top: 10px;
-        margin-bottom: 50px;
-        /* background: red; */
-    }
-    .det{
-        padding: 5px;
-        font-size: 0.9rem;
-        color: #fff;
-        background: transparent;
-        z-index: calc(1 * var(--1));
-    }
-    .how-content{
-        width: 90%;
-        padding: 20px;
-        margin: 10px 0;
-    }
-    .how-content .how-ans{
-        width: 100%;
-        margin-bottom: 50px;
-        display: block;
-        outline: 1px solid var(--bg-color-2);
-        outline-offset: 10px;
-    }
-}
 
 @media (max-width: 700px) {
     .how-head{
@@ -219,5 +191,33 @@ body{
         color: #fff;
         background: transparent;
         z-index: calc(1 * var(--1));
+    }
+}
+@media (orientation: portrait) {
+    .how-head{
+        font-size: 0.7rem;
+        font-stretch: wider;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        /* background: red; */
+    }
+    .det{
+        padding: 5px;
+        font-size: 0.9rem;
+        color: #fff;
+        background: transparent;
+        z-index: calc(1 * var(--1));
+    }
+    .how-content{
+        width: 90%;
+        padding: 20px;
+        margin: 10px 0;
+    }
+    .how-content .how-ans{
+        width: 100%;
+        margin-bottom: 50px;
+        display: block;
+        outline: 1px solid var(--bg-color-2);
+        outline-offset: 10px;
     }
 }
