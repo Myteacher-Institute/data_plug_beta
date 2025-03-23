@@ -67,7 +67,7 @@ class NINController extends Controller
 
             Auth::user()->decrement('balance', $nin_service->amount);
 
-            return redirect()->back()->with('message', 'Request Sent Successfully.\nCheck Your Dashboard In 24 Hours');
+            return redirect('/services')->with('message', 'Request Sent Successfully.\nCheck Your Dashboard In 24 Hours');
         }
         else {
             return redirect()->back()->with('message', 'Insufficient Balance');
@@ -110,6 +110,7 @@ class NINController extends Controller
             $nin_service_request->whatsapp_number = $request->whatsapp_number;
             $nin_service_request->dob = $request->dob;
             $nin_service_request->new_dob = $request->new_dob;
+            $nin_service_request->amount = $nin_service->amount;
             $nin_service_request->save();
 
             Auth::user()->decrement('balance', $nin_service->amount);
@@ -122,18 +123,50 @@ class NINController extends Controller
     }
 
     public function update_request($id) {
-        $result = EnterResult::where('request_id',$id)->first();
+        $service_request = NINServicesRequest::find($id);
 
-        return view('front.update_request', ['result' => $result]);
+        return view('front.update_request', ['service_request' => $service_request]);
     }
 
-    public function store_update_request() {
+    public function store_update_request(Request $request, $id) {
+        $validator = Validator::make($request->all(), [
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'nin_number' => 'required|string|min:10',
+            'phone_number' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'whatsapp_number' => 'required|string|max:255',
+            'dob' => 'required|string|max:255',
+        ]);
 
+        if ($validator->fails()) {
+            return redirect()->back()->with('message', 'Fill In All Required Fields');
+        }
+        
+
+        $service_request = NINServicesRequest::find($id);
+
+        $service_request->firstname = $request->firstname;
+        $service_request->new_firstname = $request->new_firstname != null ? $request->new_firstname : '';
+        $service_request->lastname = $request->lastname;
+        $service_request->new_lastname = $request->new_lastname != null ? $request->new_lastname : '';
+        $service_request->middlename = $request->middlename;
+        $service_request->new_middlename = $request->new_middlename != null ? $request->new_middlename : '';
+        $service_request->email = $request->email;
+        $service_request->nin_number = $request->nin_number;
+        $service_request->phone_number = $request->phone_number;
+        $service_request->tracking_id = $request->tracking_id;
+        $service_request->whatsapp_number = $request->whatsapp_number;
+        $service_request->dob = $request->dob;
+        $service_request->update();
+
+        return redirect()->back()->with('message', 'Request Updated Successfully');
+        
     }
 
     public function check_result($id) {
         $result = EnterResult::where('request_id',$id)->first();
         
-        return view('front.check_result', ['result' => $result]);
+        return view('front.check_result', ['result' => $result]); 
     }
 }

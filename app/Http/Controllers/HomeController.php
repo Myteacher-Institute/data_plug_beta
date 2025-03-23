@@ -116,31 +116,19 @@ class HomeController extends Controller
     }
     public function services()
     {
-        $service_request = NINServicesRequest::all();
+        $service_request = NINServicesRequest::orderBy('id', 'desc')->get();
         return view('front.services', ['service_request' => $service_request]);
     }
 
     public function transactions()
     {
-        $transactions = Transactions::where('user_id', Auth::user()->user_id)->get();
+        $nin_service_requests = NINServicesRequest::where('user_id', Auth::user()->user_id)->get();
+        $payments = Payments::where('user_id', Auth::user()->user_id)->get();
 
- // Fetch data from the database 
-
-        // $all = Transactions::find('user_id')->where('user_id', Auth::user()->user_id);
-        // $tr  = $transactions->email;
-        // $labels = [];
-        // $data = [];
-
-        // $value = $transactions->amount;
-        //    $data[] = $value;
-            // $labels[] = $value->created_at;
-            // $datasetData = json_encode($tr);
-            
-        // }
-            return view('front.transactions', [
-                // 'all' => $all
-                'transactions' => $transactions
-            ]);
+        return view('front.transactions', [
+            'nin_service_requests' => $nin_service_requests,
+            'payments' => $payments
+        ]);
     }
 
     public function help()

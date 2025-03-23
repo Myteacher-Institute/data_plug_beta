@@ -23,7 +23,7 @@ class NINController extends Controller
         $service_requests = NINServicesRequest::where('service_type', $slug)->where('status',0)->orderBy('id','DESC')->get();
         return view('admin.service_requests', ['service_requests' => $service_requests]);
     }
-
+ 
     public function view_service_request_history($slug) {
         $service_requests = NINServicesRequest::where('service_type', $slug)->where('status',1)->orderBy('id','DESC')->get();
         return view('admin.service_request_history', ['service_requests' => $service_requests]);
@@ -40,79 +40,49 @@ class NINController extends Controller
     }
 
     public function view_service_requests_store_result(Request $request) {
-        if (!($request->filled('link'))) {
-            $validator = Validator::make($request->all(), [
-                'file' => 'required|mimes:jpeg,png,jpg,gif,pdf,doc,docx|max:2048'
-            ]);
-            if ($validator->fails()) {
-                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
-            }
+        $validator = Validator::make($request->all(), [
+            'link' => 'required|string|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('message', 'PDF Link Is Are Required');
         }
-        elseif (!($request->hasfile('file'))) {
-            $validator = Validator::make($request->all(), [
-                'link' => 'required|string|max:255'
-            ]);
-
-            if ($validator->fails()) {
-                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
-            }
-        }
-
-        $enter_result = new EnterResult;
-        $enter_result->user_id = Auth::user()->user_id;
-        $enter_result->link = $request->link;
-        $enter_result->notes = $request->notes;
-        $enter_result->request_id = $request->request_id;
-
-        if ($request->hasfile('file')) {
-            $file = $request->file('file');
-            $filename = uniqid() .'.'. $file->getClientOriginalExtension();
-            $file->move('uploads/', $filename);
-            $enter_result->file = $filename;
-        }
-
-        $enter_result->save();
 
         $nin_service_request = NINServicesRequest::where('id',$request->request_id)->first();
+
+        $enter_result = new EnterResult;
+        $enter_result->user_id = $nin_service_request->user_id;
+        $enter_result->link = $request->link;
+        $enter_result->request_id = $request->request_id;
+        $enter_result->save();
+
+        
         $nin_service_request->status = 1;
         $nin_service_request->update();
 
         return redirect()->back()->with('message', 'Request Result Added Successfully');
     }
 
-    public function view_service_requests_update_result(Request $request) {
-        if (!($request->filled('link'))) {
-            $validator = Validator::make($request->all(), [
-                'file' => 'required|mimes:jpeg,png,jpg,gif,pdf,doc,docx|max:2048'
-            ]);
-            if ($validator->fails()) {
-                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
-            }
-        }
-        elseif (!($request->hasfile('file'))) {
-            $validator = Validator::make($request->all(), [
-                'link' => 'required|string|max:255'
-            ]);
+    public function view_service_requests_update_result($id) {
+        $service_request = NINServicesRequest::find($id);
+        return view('admin.update_service_result', ['service_request' => $service_request]);
+    }
 
-            if ($validator->fails()) {
-                return redirect()->back()->with('message', 'Upload File Or Add PDF Link');
-            }
+    public function view_service_requests_store_update_result(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'link' => 'required|string|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->with('message', 'PDF Link Is Required');
         }
 
-        $update_result = EnterResult::find($request->id);
+        $update_result = EnterResult::where('request_id', $request->request_id)->first();
         $update_result->link = $request->link;
-        $update_result->notes = $request->notes;
-
-        if ($request->hasfile('file')) {
-            $file = $request->file('file');
-            $filename = uniqid() .'.'. $file->getClientOriginalExtension();
-            $file->move('uploads/', $filename);
-            $update_result->file = $filename;
-        }
 
         $update_result->update();
 
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Request PDF Link Updated Successfully');
     }
 
     public function add_service() {

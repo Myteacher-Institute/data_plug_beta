@@ -7,6 +7,7 @@ use App\Models\EnterResult;
 use App\Models\Help;
 use App\Models\NINServices;
 use App\Models\NINServicesRequest;
+use App\Models\Payments;
 use App\Models\Settings;
 use App\Models\Transactions;
 use App\Models\User;
@@ -281,24 +282,12 @@ class AdminController extends Controller
 
 
     public function get_transactions() {
-        $transactions = Transactions::all();
-        $sum = $transactions->sum('amount');
-        $average = $transactions->count() > 0 ? $sum / $transactions->count() : 0;
-        $percentage = $transactions->count() > 0 ? ($sum / ($transactions->count() * $average)) * 100 : 0;
-
-        $all = Transactions::all()->where('product_name', 'MTN Airtime VTU');
-        // $prd = Transactions::where('id',)->get();
-        $sum_prd = $all->sum('amount');
-        $mtn_sum = $all->count() > 0 ? $sum_prd: 0;
-
-
+        $nin_service_requests = NINServicesRequest::orderBy('id', 'desc')->get();
+        $payments = Payments::orderBy('id', 'desc')->get();
 
         return view('admin.transactions',[
-            'transactions' => $transactions,
-            'sum' => $sum,
-            'average' => $average,
-            'percentage' => $percentage,
-            'mtn_sum' => $mtn_sum
+            'nin_service_requests' => $nin_service_requests,
+            'payments' => $payments,
         ]);
     }
 

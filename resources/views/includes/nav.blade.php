@@ -41,7 +41,7 @@
         @else
         <div class="reg" onclick="regShow()">
             <i class="fa-solid fa-arrow-down-short-wide"></i>
-            Register
+            Account
         </div>
         <div class="reg-btn">
             <a href={{ url('/login') }} class="login-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log in</a>

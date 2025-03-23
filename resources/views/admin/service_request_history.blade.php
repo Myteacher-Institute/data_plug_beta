@@ -70,8 +70,8 @@
                     <tr style="margin-bottom: 50px">
                         <td></td>
                         <td id="myBtn">
-                            <a href="#" style="background-color: darkblue; color: white; text-decoration: none; padding: 5px; cursor: pointer;" id="delete-btn">
-                                Update   Result
+                            <a href="{{ url('admin/view-service-requests/update-result/'.$item->id) }}" style="background-color: darkblue; color: white; text-decoration: none; padding: 5px; cursor: pointer;" id="delete-btn">
+                                Update   Link
                             </a>
                             <div id="myModal" class="modal">
 
@@ -87,21 +87,12 @@
                                                 @csrf
                                                 @method('PUT')
                                 
-                                                <input type="text" name="id" value="{{ $result->id }}">
-                                
-                                                <div class="form">
+                                                    <input type="text" name="request_id" value="{{ $result->request_id }}">
+
                                                     <div class="input-container ic1" style="margin-bottom: 50px">
-                                                        <input id="file" name="file" class="input" type="file" placeholder=" " />
-                                                        <label for="file" >Upload File</label> 
-                                                    </div>
-                                                    <div class="input-container ic1" style="margin-bottom: 50px">
-                                                        <input id="link" name="link" class="input" type="text" placeholder=" " />
+                                                        <input id="link" name="link" value="{{ $result->link }}" class="input" type="text" placeholder=" " />
                                                         <label for="link" >PDF Link</label>
                                                     </div>
-                                                    <div class="input-container ic2" style="margin-bottom: 50px">
-                                                        <div class="input-container ic2" style="margin-bottom: 30px">
-                                                        <textarea id="notes" name="notes" class="input" cols="40" rows="25"></textarea>
-                                                        <label for="notes" >Notes <i>(if any)</i></>
                                                     </div>
                                                     <button type="submit" class="submit">Update</button>
                                                 </div>
@@ -112,33 +103,6 @@
                                         </div>
                                       </div>
                                 </form>
-                              
-                              </div>
-                        </td>
-                        <td id="myBtn1">
-                            <a href="#" style="background-color: green; color: white; text-decoration: none; padding: 5px; cursor: pointer;" id="delete-btn">
-                                View   Result
-                            </a>
-                            <div id="myModal1" class="modal">
-
-                                @php
-                                    $result = App\Models\EnterResult::where('request_id',$item->id)->first();
-                                @endphp
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                  <span id="close1" class="close">&times;</span>
-                                  <div>
-                                    <a href="{{ asset('uploads/'.$result->file) }}" download="">Download PDF</a>
-                                  </div><br>
-
-                                  <div>
-                                    PDF Link: {{ $result->link  }}
-                                  </div><br>
-
-                                  <div>
-                                    Notes: {{ $result->notes == "" ? "Empty" : $result->notes }}
-                                  </div><br>
-                                </div>
                               
                               </div>
                         </td>

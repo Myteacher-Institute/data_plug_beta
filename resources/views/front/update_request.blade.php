@@ -42,7 +42,7 @@
                     alert('{{ session('error') }}')
                 </script>
             @endif
-            @if (session('message'))
+            @if (session('message')) 
                 <script>
                     alert('{{ session('message') }}')
                 </script>
@@ -58,44 +58,52 @@
                 {{-- i suggest that this place should be for payment form before the user proceed with nin retriving form --}}
             
                 <div class="nin-md-form">
-                    <form action="{{ url('nin-modification') }}" method="POST">
+                    <form action="{{ url('store-update-request/'.$service_request->id) }}" method="POST">
                         @csrf
-        
+                        @method('PUT')
             
                         <div class="nin-rt-form-group">
-                            <input type="text" id="nin" name="firstname" placeholder="Enter your NIN firstname"><br>
-                            <input type="text" id="nin" name="new_firstname" placeholder="Enter your new firstname">
+                            <input type="text" id="nin" name="firstname" value="{{ $service_request->firstname }}" placeholder="Enter your NIN firstname"><br>
+                            <input type="text" id="nin" name="new_firstname" value="{{ $service_request->new_firstname != null ? $service_request->new_firstname : ''}}" placeholder="Enter your new firstname">
                         </div>
             
                         <div class="nin-rt-form-group">
-                            <input type="text" id="nin" name="middlename" placeholder="Enter your NIN middlename">
-                            <input type="text" id="nin" name="new_middlename" placeholder="Enter your new middlename">
+                            <input type="text" id="nin" name="middlename" value="{{ $service_request->middlename }}" placeholder="Enter your NIN middlename">
+                            <input type="text" id="nin" name="new_middlename" value="{{ $service_request->new_middlename != null ? $service_request->new_middlename : ''}}" placeholder="Enter your new middlename">
                         </div>
                 
                         <div class="nin-rt-form-group">
-                            <input type="text" id="nin" name="lastname" placeholder="Enter your NIN lastname"><br>
-                            <input type="text" id="nin" name="new_lastname" placeholder="Enter your new lastname">
+                            <input type="text" id="nin" name="lastname" value="{{ $service_request->lastname }}" placeholder="Enter your NIN lastname"><br>
+                            <input type="text" id="nin" name="new_lastname" value="{{ $service_request->new_lastname != null ? $service_request->new_lastname : ''}}" placeholder="Enter your new lastname">
                         </div>
              
                         <div class="nin-rt-form-group">
-                            <input type="date" id="nin" name="dob" placeholder="Enter your date of birth"> <i>(Enter DOB)</i><br>
-                            <input type="date" id="nin" name="new_dob" placeholder="Enter your new date of birth"> <i>(Enter New DOB)</i>
+                            <input type="date" id="nin" name="dob" value="{{ $service_request->dob }}" placeholder="Enter your date of birth"> <i>(Enter DOB)</i><br>
+                            <input type="date" id="nin" name="new_dob" value="{{ $service_request->new_dob != null ? $service_request->new_dob : ''}}" placeholder="Enter your new date of birth"> <i>(Enter New DOB)</i>
                         </div>
             
                         <div class="nin-rt-form-group">
-                            <input type="email" id="nin" name="email" placeholder="Enter your email address">
+                            <input type="email" id="nin" name="email" value="{{ $service_request->email }}" placeholder="Enter your email address">
                         </div>
                 
                         <div class="nin-rt-form-group">
-                            <input type="text" id="nin" name="nin_number" placeholder="Enter your ninNumber">
+                            <input type="text" id="nin" name="nin_number" value="{{ $service_request->nin_number }}" placeholder="Enter your nin number">
+                        </div>
+
+                        <div class="nin-rt-form-group">
+                            <input type="text" id="nin" name="tracking_id" value="{{ $service_request->tracking_id != null ? $service_request->tracking_id : ''}}" placeholder="Enter your tracking ID">
                         </div>
                 
                         <div class="nin-rt-form-group">
-                            <input type="text" id="nin" name="phone_number" placeholder="Enter your phone number">
+                            <input type="text" id="nin" name="phone_number" value="{{ $service_request->phone_number }}" placeholder="Enter your phone number">
                         </div>
                 
                         <div class="nin-rt-form-group">
-                            <input type="text" id="nin" name="whatsapp_number" placeholder="Enter your whatsapp number"> <i>(To get result)</i>
+                            <input type="text" id="nin" name="whatsapp_number" value="{{ $service_request->whatsapp_number }}" placeholder="Enter your whatsapp number"> <i>(To get result)</i>
+                        </div>
+
+                        <div class="nin-rt-form-group-btn">
+                            <button type="submit" id="send-nin">Submit</button>
                         </div>
             
                     </form>
@@ -103,8 +111,8 @@
                     
                 {{-- this will be the success message after the form has been submitted --}}
             
-                <p>Make sure your details are correct!</p>
-                <p>NIN Modification will be sent to your dashboard within 24 hours 🕑</p>
+                <br>
+                <p>Updating a request is only done within the first hour!</p>
                 </div>
             </div>
 

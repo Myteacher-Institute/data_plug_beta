@@ -6,7 +6,7 @@
 
     {{-- i suggest that this place should be for payment form before the user proceed with nin retriving form --}}
 
-    <div class="nin-md-form">
+    <div class="nin-md-form"> 
         <form action="{{ url('nin-modification') }}" method="POST" onsubmit="return confirm('Are you sure to proceed with this modification?')">
             @csrf
 

@@ -23,10 +23,6 @@
 
         <p style="margin-left: 30px;"><a href="{{ url('admin/view-all-service-request-history/') }}">View History </a></p>
 
-        @if (count($service_requests) > 0)
-        <p style="margin-left: 30px;"><a href="{{ url('admin/view-service-request-history/'.$service_requests[0]->service_type) }}">View History</a></p>
-        @endif
-
         <div class="board">
             <table width="100%">
                 <thead>
@@ -73,7 +69,7 @@
                     </tr>
                     <tr style="margin-bottom: 50px">
                         <td></td>
-                        <td><a href="{{ url('admin/view-service-requests/'.$item->id.'/enter-result') }}" style="background-color: green; color: white; text-decoration: none; padding: 5px; cursor: pointer;" id="delete-btn">Enter   Result</a></td>
+                        <td><a href="{{ url('admin/view-service-requests/'.$item->id.'/enter-result') }}" style="background-color: green; color: white; text-decoration: none; padding: 5px; cursor: pointer;" id="delete-btn">Enter Link</a></td>
                     </tr>
                     @empty
                     <h3 style="color: red; text-align: center;">No Request Available</h3>  

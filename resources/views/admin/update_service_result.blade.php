@@ -19,7 +19,7 @@
         </div>
     </div>
 
-        <h3 class="i-name">Add Request Result</h3>
+        <h3 class="i-name">Update Request Result</h3>
         @if (session('message'))
         <script>
             alert('{{ session('message') }}')
@@ -29,8 +29,9 @@
         <p style="margin-left: 30px;"><a href="{{ url('admin/services') }}">Back</a></p>
 
         <div class="values">
-            <form action="{{ url('admin/view-service-requests/enter-result') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('admin/view-service-requests/update-result') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
 
                 <input type="hidden" name="request_id" value="{{ $service_request->id }}">
 
@@ -39,7 +40,7 @@
                         <input id="link" name="link" class="input" type="text" placeholder=" " />
                         <label for="link" >PDF Link</label>
                     </div>
-                    <button type="submit" class="submit">Save</button>
+                    <button type="submit" class="submit">Update</button>
                 </div>
             </form>
 

@@ -22,64 +22,56 @@
         <h3 class="i-name">Transactions</h3>
 
         <div class="board">
-            <table width="100%">
-                <thead>
-                        <td>Request ID</td>
-                        <td>User ID</td>
-                        <td>Details</td>
-                        <td>Phone</td>
-                        <td>Amount</td>
-                        <td>Type</td>
-                        <td>Status</td> 
-                        <td>Created At</td>
-                </thead>
-                <tbody>
-                    @foreach ($transactions as $transaction)
-                        
-                    <tr>
-                        <td class="people">
-                            <div class="people-de">
-                                <h5>{{ $transaction->request_id }}</h5>
-                            </div>
-                        </td>
-                        <td class="role">
-                            <h5>{{ $transaction->user_id }}</h5>
-                        </td>
-                        <td class="people-des">
-                            <h5>{{ $transaction->product_name }}</h5>
-                            <p>N{{ $transaction->amount }}</p>
-                        </td>
-                        <td class="role">
-                            <h5>{{ $transaction->phone }}</h5>
-                        </td>
-                        <td class="role">
-                            <h5>{{ $transaction->amount }}</h5>
-                        </td>
-                        <td class="role">
-                            <h5>{{ $transaction->type }}</h5>
-                        </td>
-                        <td class="role">
-                            <h5>{{ $transaction->status == 1 ? "Delivered" : "Not Delivered" }}</h5>
-                        </td>
-                        <td class="role">
-                            <h5>{{ $transaction->created_at }}</h5>
-                        </td>
-                    </tr>
-
-                    @endforeach
-
-                </tbody>
-            </table>
+            <h3>Requests</h3><br>
+            <table>
+              <thead>
+                <th>Service Type</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Created At</th>
+              </thead>
     
-            </div>
-
-            <div class="cal" style="padding: 30px">
-                <div class="total-amount">the total amount of money: {{ $sum }}</div>
-                <div class="averg">the average: {{ $average }}</div>
-                <div class="percentage">Percentage of Transactions: {{ $percentage }}%</div>
-                <div>amount used with mtn {{ $mtn_sum }}</div>
-            </div>
-        </div>
+            <tbody class="tb">
+    
+                @foreach ($nin_service_requests as $nin_service_request)
+                  <tr>
+                    <td>{{ Str::title($nin_service_request->service_type) }}</td>
+                    <td>{{ $nin_service_request->firstname.' '.$nin_service_request->lastname }}</td>
+                    <td>N{{ $nin_service_request->amount }}</td>
+                    <td>{{ $nin_service_request->status == 1 ? "Deliverd" : "Not Delivered" }} </td>
+                    <td>{{ $nin_service_request->created_at }}</td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+    
+          <br><br><br>
+    
+          <div class="board">
+            <h3>Payments</h3><br>
+            <table>
+              <thead>
+                <th>Transaction Ref.</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Created At</th>
+              </thead>
+              <tbody>
+                @foreach ($payments as $payment)
+                  <tr>
+                    <td>{{ Str::title($payment->tx_ref) }}</td>
+                    <td>{{ $payment->name }}</td>
+                    <td>N{{ $payment->amount_paid }}</td>
+                    <td>{{ $payment->status == 1 ? "Deliverd" : "Not Delivered" }} </td>
+                    <td>{{ $payment->created_at }}</td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
     </section>
 
 @endsection

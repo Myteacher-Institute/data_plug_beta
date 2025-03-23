@@ -17,9 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('request_id');
-            $table->string('link')->nullable();
-            $table->text('notes')->nullable();
-            $table->string('file')->nullable();
+            $table->string('link');
             $table->timestamps();
         });
     }

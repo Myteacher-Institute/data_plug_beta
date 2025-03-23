@@ -46,7 +46,7 @@ Route::get('/display-value', [App\Http\Controllers\NINController::class, 'displa
 Route::post('/nin-retrieval', [App\Http\Controllers\NINController::class, 'nin_retrieval']);
 Route::post('/nin-modification', [App\Http\Controllers\NINController::class, 'nin_modification']);
 Route::get('/update-request/{id}', [App\Http\Controllers\NINController::class, 'update_request']);
-Route::put('/store-update-request', [App\Http\Controllers\NINController::class, 'store_update_request']);
+Route::put('/store-update-request/{id}', [App\Http\Controllers\NINController::class, 'store_update_request']);
 Route::get('/check-result/{id}', [App\Http\Controllers\NINController::class, 'check_result']);
 
 
@@ -64,7 +64,7 @@ Route::get('/mobile_data', [App\Http\Controllers\HomeController::class, 'mobile_
 Route::get('/sme', [App\Http\Controllers\HomeController::class, 'sme']);
 Route::get('/electricity', [App\Http\Controllers\HomeController::class, 'electricity']);
 Route::get('/bills', [App\Http\Controllers\HomeController::class, 'bills']);
-  
+   
 
 // Admin Routes
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
@@ -76,7 +76,8 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::get('/view-all-service-request-history', [NINController::class, 'view_all_service_request_history']);
     Route::get('/view-service-requests/{id}/enter-result', [NINController::class, 'view_service_requests_enter_result']);
     Route::post('/view-service-requests/enter-result', [NINController::class, 'view_service_requests_store_result']);
-    Route::put('/view-service-requests/update-result', [NINController::class, 'view_service_requests_update_result']);
+    Route::get('/view-service-requests/update-result/{id}', [NINController::class, 'view_service_requests_update_result']);
+    Route::put('/view-service-requests/update-result', [NINController::class, 'view_service_requests_store_update_result']);
     Route::get('/add-service', [NINController::class, 'add_service']);
     Route::post('/store-service', [NINController::class, 'store_service']);
     Route::get('/edit-service/{id}', [NINController::class, 'edit_service']);
