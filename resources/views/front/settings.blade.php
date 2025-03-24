@@ -39,12 +39,14 @@
 
             @if (session('error'))
                 <script>
-                    alert('{{ session('error') }}')
+                    // alert('{{ session('error') }}')
+                    swal("error!", "{{ session('error') }}", "error");
                 </script>
             @endif
             @if (session('message'))
                 <script>
-                    alert('{{ session('message') }}')
+                    // alert('{{ session('message') }}')
+                    swal("successful!", "{{ session('message') }}", "success");
                 </script>
             @endif
             
@@ -77,7 +79,8 @@
                 </div>
             </form>
 
-            <form action="{{ url('update_password') }}" method="POST" style="margin-left: 160px;" id="profile-form">
+
+            <form action="{{ url('update_password') }}" method="POST" style="margin-top: 40px;margin-left: 160px;" id="profile-form">
                 @csrf
                 @method('PUT')
 

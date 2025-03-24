@@ -74,7 +74,6 @@
                     @empty
                     <h3 style="color: red; text-align: center;">No Request Available</h3>  
                     @endforelse
-            
                 </tbody>
             </table>
         </div>

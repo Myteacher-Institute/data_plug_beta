@@ -45,4 +45,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('nin_services_request');
     }
-};
+}

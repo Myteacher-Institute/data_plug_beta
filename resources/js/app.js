@@ -1,4 +1,5 @@
 import './bootstrap';
 import './chart';
-import './pie'
+import './pie';
+import './swel'
 // import './transaction'

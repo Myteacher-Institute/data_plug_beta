@@ -44,7 +44,11 @@ class NINController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('message', 'Fill In All Required Fields');
+// <<<<<<< HEAD
+//             return redirect()->back()->with('message', 'Fill In All Required Fields');
+// =======
+            return redirect()->back()->with('info', 'Fill In All Required Fields');
+>>>>>>> beta
         }
         
 
@@ -67,10 +71,17 @@ class NINController extends Controller
 
             Auth::user()->decrement('balance', $nin_service->amount);
 
+<<<<<<< HEAD
             return redirect('/services')->with('message', 'Request Sent Successfully.\nCheck Your Dashboard In 24 Hours');
         }
         else {
             return redirect()->back()->with('message', 'Insufficient Balance');
+=======
+            return redirect()->back()->with('message', 'Request Sent Successfully.\nCheck Your Dashboard In 24 Hours');
+        }
+        else {
+            return redirect()->back()->with('error', 'Insufficient Balance');
+>>>>>>> beta
         }
     }
 
@@ -87,7 +98,7 @@ class NINController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('message', 'Fill In All Required Fields');
+            return redirect()->back()->with('info', 'Fill In All Required Fields');
         }
         
 

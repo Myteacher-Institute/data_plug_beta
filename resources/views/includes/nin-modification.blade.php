@@ -6,7 +6,7 @@
 
     {{-- i suggest that this place should be for payment form before the user proceed with nin retriving form --}}
 
-    <div class="nin-md-form"> 
+    <div class="nin-md-form">
         <form action="{{ url('nin-modification') }}" method="POST" onsubmit="return confirm('Are you sure to proceed with this modification?')">
             @csrf
 
@@ -26,7 +26,7 @@
                 <input type="text" id="nin" name="lastname" placeholder="Enter your NIN lastname"><br>
                 <input type="text" id="nin" name="new_lastname" placeholder="Enter your new lastname">
             </div>
- 
+
             <div class="nin-rt-form-group">
                 <input type="date" id="nin" name="dob" placeholder="Enter your date of birth"> <i>(Enter DOB)</i><br>
                 <input type="date" id="nin" name="new_dob" placeholder="Enter your new date of birth"> <i>(Enter New DOB)</i>

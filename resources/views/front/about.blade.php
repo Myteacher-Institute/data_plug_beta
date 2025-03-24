@@ -1,79 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @php
+@extends('layouts.app')
+
+@section('content')
+@php
     $settings = App\Models\Settings::where('id',1)->first();
 @endphp
-<title>@if ($settings) {{ $settings->website_title }}@endif</title>
-<link rel="stylesheet" href={{ asset('css/style1.css') }}>
-<link rel="stylesheet" href={{ asset('assset/fontawesome-free-6.5.2-web/css/all.css') }}>
-<link rel="stylesheet" href={{ asset('css/style3.css') }}>
-<link rel="stylesheet" href={{ asset('css/style4.css') }}>
-<link rel="stylesheet" href={{ asset('css/swipper.css') }}>
-<link rel="shortcut icon" @if ($settings) href={{  asset('uploads/'.$settings->favicon) }}@endif type="image/x-icon">
-@vite(['resources/sass/app.scss', 'resources/js/app.js'])
-</head>
-<body>
+{{-- </head>
+<body> --}}
 
-
-    @include('includes.nav')
 
     <div class="services">
         <h1 class="our-services" style="text-align: center;">About Us</h1>
         <div class="services-box">
             <div class="service-box1">
-                <h2 class="services-head-text">{{ __('Your Favourite payment methods') }}</h2>
-
+                <h2 class="services-head-text">{{ __('Identity cards for individuals, organizations and schools') }}</h2>
+    
                 <p class="services-text">
-                    {{ __('
-                    we as dataPlug don"t just give you a Realiable Banking activity 
-                    both also give your account serve banking') }}
+                    At {{ $settings->website_title }} we provide comprehensive identity management services specifically designed for individuals. Our offerings include services such as National Identification Number (NIN) enrollment, the issuance of plastic ID cards, and retrieval of NIN information for our clients. We aim to facilitate a smooth and efficient process for anyone needing assistance with these identity management needs
                 </p>
-            </div>
-            <img
-                src="
-                    {{
-                        asset('assset/img/SmartCity_connect_900.jpg') }}" alt="" class="service-box2">
-        </div>
-
-        <div class="services">
-            <div class="services-box">
-                <div class="service-box1">
-                    <video src="{{ asset('images/1081905350-preview.mp4') }}" controls autoplay loop></video>
-                </div>
-                <video src="{{ asset('images/1073657882-preview.mp4') }}" class="service-box2" controls autoplay loop>
-            </div>
-
-        {{-- @include('includes.service') --}}
-        <div class="services">
-            <h1 class="our-services">Our Services</h1>
-            <div class="services-box">
-                <div class="service-box1">
-                    <h2 class="services-head-text">{{ __('Fund your Account, make Transfers, Pay Bills') }}</h2>
-        
-                    <p class="services-text">
-                        {{ __('
-                        Live life on your own terms! Add money to your
-                        DataPlug Wallet and transfer to other bank accounts for
-                        free Enjoy bonuses on airtime & data top Ups and fast bill payments at the
-                        extra charge') }}
-                    </p>
-                </div>
-                <img
-                    src="
-                        {{
-                            asset('images/stock-vector-e-store-and-e-commerce-website-for-shopping-online-flat-line-vector-illustration-of-cute-woman-1855045951.jpg') }}" alt="" class="service-box2">
+                <a href="" class="s-btn">Chat us now</a>
             </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
 
 
         @include('includes.footer')
         
-</body>
-</html>
+@endsection()
 
 
 

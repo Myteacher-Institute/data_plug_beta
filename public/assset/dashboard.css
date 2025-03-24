@@ -251,14 +251,14 @@ body{
     gap: 20px;
   }
   .sup-item{
-    width: 100%;
+    width: 90%;
     background: var(--color-4);
     display: block;
     flex-wrap: wrap;
     justify-content: start;
     align-items: center;
-    padding: 20px 30px;
-    border-radius: 30px;
+    padding: 20px 20px;
+    border-radius: 20px;
   }
   .sup-item img{
     width: 30px;
