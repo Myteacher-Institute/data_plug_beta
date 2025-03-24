@@ -20,7 +20,7 @@
         <a href={{ url('register') }} class="btn arc">Join now</a>
         @endif
     </div>
-
+    
     <img src={{ asset('assset/img/first.jpeg') }} class="features-img arc">
 
     <marquee>
@@ -88,7 +88,7 @@
 </div>
 
 
-<div class="services">
+<div class="services" id="about">
     <h1 class="our-services" style="text-align: center;">About Us</h1>
     <div class="services-box">
         <div class="service-box1">
@@ -100,6 +100,8 @@
             <a href="" class="s-btn">Chat us now</a>
         </div>
     </div>
+</div>
+</div>
 
     {{-- <div class="services">
         <div class="services-box">

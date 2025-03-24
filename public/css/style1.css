@@ -101,7 +101,7 @@ nav ul li a:hover:after{
     transform: scale(1.1);
 }
 .features-img{
-    width: 50%;
+    width: 35%;
     height: 430px
     /* position: absolute; */
     /* bottom: 0; */
