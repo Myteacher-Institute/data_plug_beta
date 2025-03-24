@@ -218,6 +218,6 @@ body{
         margin-bottom: 50px;
         display: block;
         outline: 1px solid var(--bg-color-2);
-        outline-offset: 9px;
+        outline-offset: 10px;
     }
 }
