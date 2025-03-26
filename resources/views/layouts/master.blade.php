@@ -10,6 +10,18 @@
 </head>
 <body>
     <div id="app">
+    @if (session('error'))
+        <script>
+            // alert('{{ session('error') }}')
+            swal("error!", "{{ session('error') }}", "error");
+        </script>
+    @endif
+    @if (session('message'))
+        <script>
+            // alert('{{ session('message') }}')
+            swal("successful!", "{{ session('message') }}", "success");
+        </script>
+    @endif
 
         <main>
             @include('includes.admin-menu')

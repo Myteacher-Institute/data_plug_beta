@@ -2,10 +2,10 @@
     <div class="iner-footer">
         <div class="footer-box">
             <ul class="ul-list">
-                <li class="footer-list"><a href="" class="footer-link">About</a></li>
-                @if (Auth::check())
+                <li class="footer-list"><a href="#about" class="footer-link">About</a></li>
+                {{-- @if (Auth::check())
                     <li class="footer-list"><a href="" class="footer-link">Report an issue</a></li>
-                @endIf
+                @endIf --}}
             </ul>
         </div>
         <div class="footer-box">

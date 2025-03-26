@@ -2,8 +2,13 @@
     <a href="{{ url('/') }}" class="a"><img @if ($settings) src={{  asset('uploads/'.$settings->logo) }}@endif class="logo"></a>
     <ul class="ul">
         <li class="li"><a href="{{ url('/') }}" class="a">Home</a></li>
+<<<<<<< HEAD
         <li class="li"><a href="{{ url('/how') }}" class="a">How it works</a></li>
         <li class="li"><a href="{{ url('/about') }}" class="a">About</a></li>
+=======
+        {{-- <li class="li"><a href="{{ url('/how') }}" class="a">How it works</a></li> --}}
+        <li class="li"><a href="#about" class="a">About</a></li>
+>>>>>>> ffe36f1345642de874abe1aeaacce09846d49b40
     </ul>
     <div class="nav-system">
         @if (Auth::check())

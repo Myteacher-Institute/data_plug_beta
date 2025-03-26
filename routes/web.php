@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, "index"]);
-Route::get('/about', [PagesController::class, 'about']);
-Route::get('/how', [PagesController::class, 'how_it_works']);
-Route::get('/features', [PagesController::class, 'features']);
-Route::get('/test', [PagesController::class, 'test']);
+// Route::get('/about', [PagesController::class, 'about']);
+// Route::get('/how', [PagesController::class, 'how_it_works']);
+// Route::get('/features', [PagesController::class, 'features']);
+// Route::get('/test', [PagesController::class, 'test']);
 
 Auth::routes();
 
 // User Routes
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']);
 Route::get('/transactions', [App\Http\Controllers\HomeController::class, 'transactions']);
 Route::get('/view_transaction_table', [App\Http\Controllers\HomeController::class, 'view_transaction_table']);
@@ -64,7 +64,9 @@ Route::get('/mobile_data', [App\Http\Controllers\HomeController::class, 'mobile_
 Route::get('/sme', [App\Http\Controllers\HomeController::class, 'sme']);
 Route::get('/electricity', [App\Http\Controllers\HomeController::class, 'electricity']);
 Route::get('/bills', [App\Http\Controllers\HomeController::class, 'bills']);
-   
+// testimony route
+Route::get('/testify', [App\Http\Controllers\HomeController::class, 'testimony'])->name('testify');
+Route::post('/add_testify', [App\Http\Controllers\TestifyController::class,'saveTestimonial'])->name('add_testify');
 
 // Admin Routes
 Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
@@ -78,6 +80,9 @@ Route::prefix('admin')->middleware('auth', 'isAdmin')->group( function() {
     Route::post('/view-service-requests/enter-result', [NINController::class, 'view_service_requests_store_result']);
     Route::get('/view-service-requests/update-result/{id}', [NINController::class, 'view_service_requests_update_result']);
     Route::put('/view-service-requests/update-result', [NINController::class, 'view_service_requests_store_update_result']);
+    Route::get('/view-service-requests/{id}/enter-result', [NINController::class, 'view_service_requests_enter_result']);
+    Route::post('/view-service-requests/enter-result', [NINController::class, 'view_service_requests_store_result']);
+    Route::post('/view-service-requests/update-result', [NINController::class, 'view_service_requests_update_result']);
     Route::get('/add-service', [NINController::class, 'add_service']);
     Route::post('/store-service', [NINController::class, 'store_service']);
     Route::get('/edit-service/{id}', [NINController::class, 'edit_service']);

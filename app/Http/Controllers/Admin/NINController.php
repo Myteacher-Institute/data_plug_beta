@@ -23,12 +23,11 @@ class NINController extends Controller
         $service_requests = NINServicesRequest::where('service_type', $slug)->where('status',0)->orderBy('id','DESC')->get();
         return view('admin.service_requests', ['service_requests' => $service_requests]);
     }
- 
+
     public function view_service_request_history($slug) {
         $service_requests = NINServicesRequest::where('service_type', $slug)->where('status',1)->orderBy('id','DESC')->get();
         return view('admin.service_request_history', ['service_requests' => $service_requests]);
     }
-
     public function view_all_service_request_history() {
         $service_requests = NINServicesRequest::where('status',1)->orderBy('id','DESC')->get();
         return view('admin.service_request_history', ['service_requests' => $service_requests]);
@@ -56,7 +55,6 @@ class NINController extends Controller
         $enter_result->request_id = $request->request_id;
         $enter_result->save();
 
-        
         $nin_service_request->status = 1;
         $nin_service_request->update();
 
@@ -125,7 +123,10 @@ class NINController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with('message', 'All Fields Are Required');
+// <<<<<<< HEAD
+//             return redirect()->back()->with('message', 'All Fields Are Required');
+// =======
+            return redirect()->back()->with('error', 'All Fields Are Required');
         }
 
         $nin_service = NINServices::find($id);

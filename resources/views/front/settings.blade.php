@@ -80,6 +80,7 @@
             </form>
 
 
+
             <form action="{{ url('update_password') }}" method="POST" style="margin-left: 160px;" id="profile-form">
                 @csrf
                 @method('PUT')
