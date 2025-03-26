@@ -76,15 +76,17 @@
                             <div id="myModal" class="modal">
 
                                 @php
-                                    $result = App\Models\EnterResult::where('request_id',$item->id)->first();
+                                    $result = App\Models\EnterResult::where('request_id',$item->id)->first();       
                                 @endphp
                                 <!-- Modal content -->
+
                                 <form action=""> 
                                     <div class="modal-content">
                                         <span id="close" class="close">&times;</span>
                                         <div class="values">
                                             <form action="{{ url('admin/view-service-requests/update-result') }}" method="POST" enctype="multipart/form-data">
                                                 @csrf
+<<<<<<< HEAD
                                                 @method('PUT')
                                 
                                                     <input type="text" name="request_id" value="{{ $result->request_id }}">

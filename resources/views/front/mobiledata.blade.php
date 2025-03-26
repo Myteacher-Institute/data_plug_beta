@@ -1,4 +1,5 @@
 @extends('layouts.user')
+
 @section('content')
-mobile data
+mobile
 @endsection

@@ -1,19 +1,15 @@
 <nav>
     <a href="{{ url('/') }}" class="a"><img @if ($settings) src={{  asset('uploads/'.$settings->logo) }}@endif class="logo"></a>
     <ul class="ul">
-        <li class="li"><a href="{{ url('/features') }}" class="a">Features</a></li>
+        <li class="li"><a href="{{ url('/') }}" class="a">Home</a></li>
         <li class="li"><a href="{{ url('/how') }}" class="a">How it works</a></li>
-        @if (Auth::check() === url('/about'))
-        <li class="li"><a href="#" class="a">Content</a></li>
-        @else
         <li class="li"><a href="{{ url('/about') }}" class="a">About</a></li>
-        @endif
     </ul>
     <div class="nav-system">
         @if (Auth::check())
         <ul class="navbar-nav ms-auto">
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" style="font-size: 0.6rem;font-weight:900;" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            <li class="nav-item dropdown user-dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" style="font-weight:900;" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}
                 </a>
 
@@ -40,10 +36,9 @@
         </ul>
         @else
         <div class="reg" onclick="regShow()">
-            <i class="fa-solid fa-arrow-down-short-wide"></i>
             Account
         </div>
-        <div class="reg-btn">
+        <div class="reg-btn" style="backgroud: #fff;z-index: 100;box-shadow: 0 0 5px #ccc">
             <a href={{ url('/login') }} class="login-btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log in</a>
             <a href={{ url('/register') }} class="btn">Register</a>
         </div>

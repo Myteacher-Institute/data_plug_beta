@@ -60,11 +60,18 @@
           </div>
 
           <div class="card">
-            @if (session('message'))
+            @if (session('error'))
                 <script>
-                    alert('{{ session('message') }}');
+                    // alert('{{ session('error') }}')
+                    swal("error!", "{{ session('error') }}", "error");
                 </script>
-              @endif
+            @endif
+            @if (session('message'))
+            <script>
+                // alert('{{ session('error') }}')
+                swal("successful!", "{{ session('message') }}", "success");
+            </script>
+        @endif
               <div class="sup-item">
                 <img src="assset/img/download (1).png" alt="">
                 <h3 class="h3">NIN Services</h3> 
@@ -78,22 +85,36 @@
                     </select>
                 </div>
             </div>
-            <div class="sup-item">
+            {{-- <div class="sup-item">
                 <img src="assset/img/download (1).png" alt="">
                 <h3 class="h3">Buy Data</h3> 
                 <p class="sup-details">Purchase your data plans at the cheapest rates...</p>
                 <div class="use-btn">
                     <a href="{{ url('buy_item/data') }}" class="amount-btn">Continue</a>
                 </div>
-            </div>
-            <div class="sup-item">
+            </div> --}}
+            {{-- <div class="sup-item">
                 <img src="assset/img/download (1).png" alt="">
                 <h3 class="h3">Buy Airtime</h3> 
                 <p class="sup-details">Purchase your airtime fast and convenient...</p>
                 <div class="use-btn">
                     <a href="{{ url('buy_item/airtime') }}" class="amount-btn">Continue</a>
                 </div>
+            </div> --}}
+
+            {{-- this path is for testimony section take note --}}
+            @php
+                $settings = App\Models\Settings::where('id',1)->first();
+            @endphp
+            <div class="sup-item">
+                <img src="assset/img/download (1).png" alt="">
+                <h3 class="h3">Explane how {{ $settings->website_title }}</h3> 
+                <p class="sup-details">Tell other users your benefit or what it have help you accomplish partnering with us</p>
+                <div class="use-btn">
+                    <a href="{{ url('testify') }}" class="amount-btn">Continue</a>
+                </div>
             </div>
+
         </div>
   </div>
 

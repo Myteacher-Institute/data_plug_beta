@@ -63,6 +63,7 @@ class NINController extends Controller
             $nin_service_request->tracking_id = $request->tracking_id;
             $nin_service_request->whatsapp_number = $request->whatsapp_number;
             $nin_service_request->dob = $request->dob;
+            $nin_service_request->amount = $nin_service->amount;
             $nin_service_request->save();
 
             Auth::user()->decrement('balance', $nin_service->amount);

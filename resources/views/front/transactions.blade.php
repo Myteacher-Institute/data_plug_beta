@@ -1,6 +1,5 @@
 @extends('layouts.user')
 
-
 @section('content')   
 <div class="main">
   <div class="topbar">
@@ -51,9 +50,8 @@
             <th>Status</th>
             <th>Created At</th>
           </thead>
-
-        <tbody class="tb">
-
+          <tbody class="tb">
+ 
             @foreach ($nin_service_requests as $nin_service_request)
               <tr>
                 <td>{{ Str::title($nin_service_request->service_type) }}</td>
@@ -66,10 +64,7 @@
           </tbody>
         </table>
       </div>
-
-      <br><br><br>
-
-      <div>
+      <br><br><br><div>
         <h3>Payments</h3><br>
         <table>
           <thead>
@@ -94,7 +89,3 @@
       </div>
     </div>
 @endsection
-
-<style>
-
-</style>
